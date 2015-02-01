@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd" >
+
+<!-- NB: cette partie de la configuration Spring ne sera pas incluse dans le global "springContext.xml"
+     mais sera chargée en mémoire séparément (sur demande via la page active_jms_part.jsp)
+     raison: pour eviter erreurs dès le démarrage si l'agent ActiveMQ n'est pas démarré/accessible -->
+
+ <!-- VERSION non jndi , directement base sur activeMQ broker -->	
+ 
+	<bean id="jmsConnectionFactory" lazy-init="true" class="org.apache.activemq.ActiveMQConnectionFactory">
+         <property name="brokerURL"  value="tcp://localhost:61616" />  
+  </bean>
+           	
+      <!-- file pour vehiculer les Notifications du client vers le serveur -->
+   	 <bean id="jmsDestination-Not" class="org.apache.activemq.command.ActiveMQQueue">
+    	<property name="physicalName" value="queue.notification" />
+  	</bean>	
+  	
+  	
+
+<bean id="myJmsNotifListener" class="tp.async.jms.NotificationListener" >
+</bean>
+
+
+
+<bean id="jmsContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+<property name="connectionFactory" ref="jmsConnectionFactory"/>
+<property name="destination" ref="jmsDestination-Not"/>
+<property name="messageListener" ref="myJmsNotifListener" />
+</bean>	
+
+  <!-- file pour vehiculer les DemandeConges du client vers le serveur -->
+   	 <bean id="jmsDestination-DemandeConges" class="org.apache.activemq.command.ActiveMQQueue">
+    	<property name="physicalName" value="queue.demandeConges" />
+  	</bean>	
+  	
+  	
+
+<bean id="myJmsDemandeCongesListener" class="tp.async.jms.DemandeCongesListener" >
+</bean>
+
+
+
+<bean id="jmsContainer2" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+<property name="connectionFactory" ref="jmsConnectionFactory"/>
+<property name="destination" ref="jmsDestination-DemandeConges"/>
+<property name="messageListener" ref="myJmsDemandeCongesListener" />
+</bean>	
+
+
+</beans>

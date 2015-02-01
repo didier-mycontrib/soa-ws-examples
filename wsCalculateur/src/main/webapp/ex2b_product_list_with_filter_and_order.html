@@ -1,0 +1,28 @@
+        <html ng-app="myAjsApp">
+        <head>
+        <script src="lib/angular/angular.js"></script>
+        <script src="js/mainCtrls_v2_orderProp.js"></script>
+        </head>
+        <body ng-controller="ProductListCtrl">
+	<div id="divParam">
+         filter_query : <input ng-model="filter_query"  /> <br/>
+          Sort by:
+		<select ng-model="orderProp">
+			<option value="name">Alphabetical</option>
+			<option value="-date">Newest</option>
+                        <option value="price">Cheaper</option>
+		</select>
+	</div>
+        <div id="divProd">
+        <h3> {{title}} </h3> 
+        
+        <table border='1'>
+	  <tr> <th>name</th><th>label</th><th>date</th><th>price</th></tr>
+          <tr ng-repeat="prod in products | filter:filter_query  | orderBy:orderProp">
+             <td>{{prod.name}}</td><td>{{prod.label}} </td><td>{{prod.date}} </td><td>{{prod.price}}</td>
+          </tr>
+        </table>
+
+        </div>
+        </body>
+        </html>

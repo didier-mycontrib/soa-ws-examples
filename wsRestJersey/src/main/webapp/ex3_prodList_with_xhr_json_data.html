@@ -1,0 +1,21 @@
+        <html ng-app="myAjsApp">
+        <head>
+        <script src="lib/angular/angular.js"></script>
+        <script src="js/mainCtrls_v3_xhr_json_data.js"></script>
+        </head>
+        <body ng-controller="ProductListCtrl">
+	<div id="divParam">
+         filter_query : <input ng-model="filter_query"  /> <br/>
+        
+	</div>
+        <div id="divProd">
+        <h3> {{title}} </h3> 
+        <ul>
+        <li ng-repeat="prod in products | filter:filter_query  ">
+        {{prod.name}}
+        <p>{{prod.label}} , date:{{prod.date}} , price:{{prod.price}}</p>
+        </li>
+        </ul>
+        </div>
+        </body>
+        </html>

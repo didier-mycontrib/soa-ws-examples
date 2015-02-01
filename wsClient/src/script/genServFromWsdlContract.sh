@@ -1,0 +1,3 @@
+# -d src ou -d src/main/java ou ...
+commandeDeCxfPourGenererDebutCodeServerJavaDepuisWsdl -d ../temp -keep -help http://localhost:8080/wsCalculateur/services/calculateur?wsdl
+echo "fin"; read fin

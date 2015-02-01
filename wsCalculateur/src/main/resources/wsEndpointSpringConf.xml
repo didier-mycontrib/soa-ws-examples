@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:jaxws="http://cxf.apache.org/jaxws"
+  xmlns:jaxrs="http://cxf.apache.org/jaxrs"  
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+	<!-- <import resource="classpath:META-INF/cxf/cxf-extension-jaxrs-binding.xml" /> for old cxf version only-->	
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+	
+	
+	<!-- 
+	Ce fichier (extension pour les services WEB) sera utilise par la technologie 
+	CXF au sein du projet xxx-web .
+	 -->
+	 <!-- 
+	 <bean id="userMapAuthManager" class="generic.util.auth.local.UserMapAuthManager">
+		<property name="users">
+			<map>
+			<entry key="user1" value="pwd1"/> 
+			<entry key="user2" value="pwd2"/>
+			</map>
+		</property>
+	</bean>
+	-->
+	<bean id="userMapAuthManagerViaSpringSecurity" class="generic.util.auth.local.SpringSecurityUserSerciceAuthManagerAdapter">
+		<property name="userDetailsService" ref="simpleUserDetailsService" /> <!-- in security-config.xml -->
+	</bean>
+	 
+	 <bean id="basicHttpSecurityInterceptor" class="generic.ws.util.interceptor.cxf.CxfBasicAuthInterceptor">
+	    <!--  <property name="authManager" ref="userMapAuthManager"/> -->
+		<property name="authManager" ref="userMapAuthManagerViaSpringSecurity"/> <!-- test avec mode ="preemptive" dans soap-ui recent -->
+	</bean>
+	
+	<bean id="myPasswordCallback" class="generic.ws.util.auth.wss.PasswordCallback" >
+	      <!--  <property name="authManager" ref="userMapAuthManager"/> -->
+	     <property name="authManager" ref="userMapAuthManagerViaSpringSecurity"/> <!-- test avec mode ="preemptive" et outgoing=config de niveau projet dans soap-ui recent -->
+	</bean>
+	
+	<bean id="wssSecurityInterceptor" class="org.apache.cxf.ws.security.wss4j.WSS4JInInterceptor" >
+         <constructor-arg>
+            <map>
+               <entry key="action" value="UsernameToken"/>
+              <!--  <entry key="passwordType" value="PasswordDigest"/> --> <!-- text by default -->
+             <!--   <entry key="signaturePropFile" value="..."/> -->
+               <entry key="passwordCallbackRef">
+                  <ref bean="myPasswordCallback"/>
+               </entry>             
+            </map>
+         </constructor-arg>
+      </bean>
+	
+	
+   <jaxws:endpoint id="unsecure_serviceCalculateur_soap_endPoint"
+        
+		implementor="#calculateurImpl" address="/calculateur">	
+		<!-- version sans securite -->	
+	</jaxws:endpoint>
+	
+	 <jaxws:endpoint id="unsecure_serviceCalculateur_soap12_endPoint"
+        bindingUri="http://www.w3.org/2003/05/soap/bindings/HTTP/"
+		implementor="#calculateurImpl" address="/calculateur_soap12">	
+		<!-- version SOAP 1.2 sans securite -->	
+	</jaxws:endpoint>
+	
+		
+	<jaxws:endpoint id="basicHttp_serviceCalculateur_soap_endPoint"
+		implementor="#calculateurImpl" address="/basicHttpSecureCalculateur">	
+		<jaxws:inInterceptors>
+		    <ref bean="basicHttpSecurityInterceptor"/> 
+		</jaxws:inInterceptors>	
+	</jaxws:endpoint>
+	
+	<jaxws:endpoint id="wss_serviceCalculateur_soap_endPoint"
+		implementor="#calculateurImpl" address="/wssSecureCalculateur">	
+		<jaxws:inInterceptors>
+		    <ref bean="wssSecurityInterceptor"/> 
+		</jaxws:inInterceptors>	
+	</jaxws:endpoint>
+	
+	<jaxws:endpoint id="myRemoteLoggerImpl_soap_endPoint"
+		implementor="#myRemoteLoggerImpl" address="/myRemoteLogger">
+	</jaxws:endpoint>
+
+	<jaxws:endpoint id="myRemoteCallbackImpl_soap_endPoint"
+		implementor="#myRemoteCallbackImpl" address="/myRemoteCallback">		
+	</jaxws:endpoint>
+ 
+ 
+  <jaxws:endpoint id="uploadfile"
+                  implementor="tp.service.FileUploaderImpl"
+                  address="/uploadWs">
+                  <jaxws:properties>
+     				 <entry key="mtom-enabled" value="true"/> <!-- MTOM = Message Transmission Optimization Mechanism (for binary) -->
+    			</jaxws:properties>	
+    </jaxws:endpoint>
+
+<!-- ***** partie  WEB Services REST (JAX-RS) ********* -->
+
+
+
+<bean id="calculateurRestAdaptateur" class="tp.service.CalculateurRestAdaptateur" >
+	<property name="calculateur" ref="calculateurImpl" />
+</bean>
+
+<bean id="restDeviseService" class="tp.service.RestDeviseService" >
+</bean>
+
+
+<bean id="restProductServiceForAngularJs" class="tp.service.ProductRestJsonService" >
+</bean>
+
+
+<!-- nb : par defaut , CXF 2.x utilise la techno "Jettison" pour le lien entre JAXB et JAXRS/Json
+     cette techno génère des résultats "json" incompatible avec angular-js .
+     il faut utiliser la technologie alternative "jackson" pour obtenir une compatibilité 
+     avec angular-js -->
+
+<!-- 'org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider' for jackson 1.9 -->
+<bean id='jacksonJsonProvider' class='com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider' />
+<bean id='jacksonXmlProvider' class='com.fasterxml.jackson.jaxrs.xml.JacksonJaxbXMLProvider' />
+
+<!-- url complete de type "http://localhost:8080/mywebapp/services/rest/myservice/xxx"
+avec "services" associe à l'url-pattern de CxfServlet dans web.xml
+et myservices/xxx associe aux valeurs de @Path() de la classe java et des méthodes
+-->
+<jaxrs:server id="myRestServices" address="/rest">
+	<jaxrs:providers>
+		<ref bean='jacksonJsonProvider' />
+		<ref bean='jacksonXmlProvider' />
+	</jaxrs:providers>
+	<jaxrs:serviceBeans>
+		<ref bean="restDeviseService" />
+		<ref bean="restProductServiceForAngularJs" />
+		<ref bean="calculateurRestAdaptateur" />
+	</jaxrs:serviceBeans>
+	<jaxrs:extensionMappings>
+	<entry key="xml" value="application/xml" /> 
+	<entry key="json" value="application/json" />
+	</jaxrs:extensionMappings>
+	
+	<!-- a faire : trouver le paramétrage cxf 2.6 ou 2.7 compatible JSon
+	     et pour l'instant se limiter à la version 2.5.5 de cxf qui fonctionne avec JSON  -->
+		
+</jaxrs:server>
+
+
+
+</beans>

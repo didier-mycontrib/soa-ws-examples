@@ -1,0 +1,735 @@
+2015-02-01 13:04:00,526 DEBUG main org.hibernate.validator.internal.engine.resolver.DefaultTraversableResolver - Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+2015-02-01 13:04:00,526 DEBUG main org.hibernate.validator.internal.engine.resolver.DefaultTraversableResolver - Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+2015-02-01 13:04:00,527 DEBUG main org.hibernate.cfg.beanvalidation.TypeSafeActivator - Unable to acquire Bean Validation ValidatorFactory, skipping activation
+2015-02-01 13:04:00,527 DEBUG main org.hibernate.secure.spi.JaccIntegrator - Skipping JACC integration as it was not enabled
+2015-02-01 13:04:00,527 DEBUG main org.hibernate.engine.spi.CascadeStyles - External cascade style regsitration [persist : STYLE_PERSIST_SKIPLAZY] overrode base registration [STYLE_PERSIST_SKIPLAZY]
+2015-02-01 13:04:00,528 DEBUG main org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory - Setting dialect [org.hibernate.dialect.MySQLDialect]
+2015-02-01 13:04:00,528 DEBUG main org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory - Setting dialect [org.hibernate.dialect.MySQLDialect]
+2015-02-01 13:04:00,530 DEBUG main org.hibernate.persister.entity.AbstractEntityPersister - Static SQL for entity: tp.minibankWS.entity.PlageFraisDossier
+2015-02-01 13:04:00,530 DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Version select: select num_plage from T_FraisDossier where num_plage =?
+2015-02-01 13:04:00,532 DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Snapshot select: select plagefrais_.num_plage, plagefrais_.frais as frais2_0_, plagefrais_.montant_max as montant_3_0_, plagefrais_.montant_min as montant_4_0_ from T_FraisDossier plagefrais_ where plagefrais_.num_plage=?
+2015-02-01 13:04:00,533 DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Insert 0: insert into T_FraisDossier (frais, montant_max, montant_min, num_plage) values (?, ?, ?, ?)
+2015-02-01 13:04:00,533 DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Update 0: update T_FraisDossier set frais=?, montant_max=?, montant_min=? where num_plage=?
+2015-02-01 13:04:00,533 DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Delete 0: delete from T_FraisDossier where num_plage=?
+2015-02-01 13:04:00,533 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@9d4ca5]
+2015-02-01 13:04:00,533 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : frais
+2015-02-01 13:04:00,533 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : montant_max
+2015-02-01 13:04:00,533 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : montant_min
+2015-02-01 13:04:00,533 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2015-02-01 13:04:00,533 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2015-02-01 13:04:00,533 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=tp.minibankWS.entity.PlageFraisDossier)
+    - Returns
+       - EntityReturnImpl(entity=tp.minibankWS.entity.PlageFraisDossier, querySpaceUid=<gen:0>, path=tp.minibankWS.entity.PlageFraisDossier)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=tp.minibankWS.entity.PlageFraisDossier)
+          - SQL table alias mapping - plagefrais0_
+          - alias suffix - 0_
+          - suffixed key columns - {num_plag1_0_0_}
+
+2015-02-01 13:04:00,533 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity tp.minibankWS.entity.PlageFraisDossier [NONE]: select plagefrais0_.num_plage as num_plag1_0_0_, plagefrais0_.frais as frais2_0_0_, plagefrais0_.montant_max as montant_3_0_0_, plagefrais0_.montant_min as montant_4_0_0_ from T_FraisDossier plagefrais0_ where plagefrais0_.num_plage=?
+2015-02-01 13:04:00,533 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@593f4e]
+2015-02-01 13:04:00,533 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : frais
+2015-02-01 13:04:00,533 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : montant_max
+2015-02-01 13:04:00,533 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : montant_min
+2015-02-01 13:04:00,533 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2015-02-01 13:04:00,534 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2015-02-01 13:04:00,534 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=tp.minibankWS.entity.PlageFraisDossier)
+    - Returns
+       - EntityReturnImpl(entity=tp.minibankWS.entity.PlageFraisDossier, querySpaceUid=<gen:0>, path=tp.minibankWS.entity.PlageFraisDossier)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=tp.minibankWS.entity.PlageFraisDossier)
+          - SQL table alias mapping - plagefrais0_
+          - alias suffix - 0_
+          - suffixed key columns - {num_plag1_0_0_}
+
+2015-02-01 13:04:00,534 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity tp.minibankWS.entity.PlageFraisDossier [READ]: select plagefrais0_.num_plage as num_plag1_0_0_, plagefrais0_.frais as frais2_0_0_, plagefrais0_.montant_max as montant_3_0_0_, plagefrais0_.montant_min as montant_4_0_0_ from T_FraisDossier plagefrais0_ where plagefrais0_.num_plage=?
+2015-02-01 13:04:00,534 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@14a119a]
+2015-02-01 13:04:00,534 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : frais
+2015-02-01 13:04:00,534 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : montant_max
+2015-02-01 13:04:00,534 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : montant_min
+2015-02-01 13:04:00,534 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2015-02-01 13:04:00,534 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2015-02-01 13:04:00,534 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=tp.minibankWS.entity.PlageFraisDossier)
+    - Returns
+       - EntityReturnImpl(entity=tp.minibankWS.entity.PlageFraisDossier, querySpaceUid=<gen:0>, path=tp.minibankWS.entity.PlageFraisDossier)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=tp.minibankWS.entity.PlageFraisDossier)
+          - SQL table alias mapping - plagefrais0_
+          - alias suffix - 0_
+          - suffixed key columns - {num_plag1_0_0_}
+
+2015-02-01 13:04:00,534 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity tp.minibankWS.entity.PlageFraisDossier [UPGRADE]: select plagefrais0_.num_plage as num_plag1_0_0_, plagefrais0_.frais as frais2_0_0_, plagefrais0_.montant_max as montant_3_0_0_, plagefrais0_.montant_min as montant_4_0_0_ from T_FraisDossier plagefrais0_ where plagefrais0_.num_plage=? for update
+2015-02-01 13:04:00,534 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@19e1399]
+2015-02-01 13:04:00,534 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : frais
+2015-02-01 13:04:00,534 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : montant_max
+2015-02-01 13:04:00,534 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : montant_min
+2015-02-01 13:04:00,535 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2015-02-01 13:04:00,535 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2015-02-01 13:04:00,535 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=tp.minibankWS.entity.PlageFraisDossier)
+    - Returns
+       - EntityReturnImpl(entity=tp.minibankWS.entity.PlageFraisDossier, querySpaceUid=<gen:0>, path=tp.minibankWS.entity.PlageFraisDossier)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=tp.minibankWS.entity.PlageFraisDossier)
+          - SQL table alias mapping - plagefrais0_
+          - alias suffix - 0_
+          - suffixed key columns - {num_plag1_0_0_}
+
+2015-02-01 13:04:00,535 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity tp.minibankWS.entity.PlageFraisDossier [UPGRADE_NOWAIT]: select plagefrais0_.num_plage as num_plag1_0_0_, plagefrais0_.frais as frais2_0_0_, plagefrais0_.montant_max as montant_3_0_0_, plagefrais0_.montant_min as montant_4_0_0_ from T_FraisDossier plagefrais0_ where plagefrais0_.num_plage=? for update
+2015-02-01 13:04:00,535 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4efd53]
+2015-02-01 13:04:00,535 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : frais
+2015-02-01 13:04:00,535 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : montant_max
+2015-02-01 13:04:00,535 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : montant_min
+2015-02-01 13:04:00,535 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2015-02-01 13:04:00,535 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2015-02-01 13:04:00,536 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=tp.minibankWS.entity.PlageFraisDossier)
+    - Returns
+       - EntityReturnImpl(entity=tp.minibankWS.entity.PlageFraisDossier, querySpaceUid=<gen:0>, path=tp.minibankWS.entity.PlageFraisDossier)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=tp.minibankWS.entity.PlageFraisDossier)
+          - SQL table alias mapping - plagefrais0_
+          - alias suffix - 0_
+          - suffixed key columns - {num_plag1_0_0_}
+
+2015-02-01 13:04:00,536 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity tp.minibankWS.entity.PlageFraisDossier [UPGRADE_SKIPLOCKED]: select plagefrais0_.num_plage as num_plag1_0_0_, plagefrais0_.frais as frais2_0_0_, plagefrais0_.montant_max as montant_3_0_0_, plagefrais0_.montant_min as montant_4_0_0_ from T_FraisDossier plagefrais0_ where plagefrais0_.num_plage=? for update
+2015-02-01 13:04:00,536 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1633bbd]
+2015-02-01 13:04:00,536 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : frais
+2015-02-01 13:04:00,536 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : montant_max
+2015-02-01 13:04:00,536 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : montant_min
+2015-02-01 13:04:00,536 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2015-02-01 13:04:00,536 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2015-02-01 13:04:00,536 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=tp.minibankWS.entity.PlageFraisDossier)
+    - Returns
+       - EntityReturnImpl(entity=tp.minibankWS.entity.PlageFraisDossier, querySpaceUid=<gen:0>, path=tp.minibankWS.entity.PlageFraisDossier)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=tp.minibankWS.entity.PlageFraisDossier)
+          - SQL table alias mapping - plagefrais0_
+          - alias suffix - 0_
+          - suffixed key columns - {num_plag1_0_0_}
+
+2015-02-01 13:04:00,536 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity tp.minibankWS.entity.PlageFraisDossier [FORCE]: select plagefrais0_.num_plage as num_plag1_0_0_, plagefrais0_.frais as frais2_0_0_, plagefrais0_.montant_max as montant_3_0_0_, plagefrais0_.montant_min as montant_4_0_0_ from T_FraisDossier plagefrais0_ where plagefrais0_.num_plage=? for update
+2015-02-01 13:04:00,536 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@155f12b]
+2015-02-01 13:04:00,536 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : frais
+2015-02-01 13:04:00,536 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : montant_max
+2015-02-01 13:04:00,536 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : montant_min
+2015-02-01 13:04:00,536 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2015-02-01 13:04:00,536 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2015-02-01 13:04:00,537 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=tp.minibankWS.entity.PlageFraisDossier)
+    - Returns
+       - EntityReturnImpl(entity=tp.minibankWS.entity.PlageFraisDossier, querySpaceUid=<gen:0>, path=tp.minibankWS.entity.PlageFraisDossier)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=tp.minibankWS.entity.PlageFraisDossier)
+          - SQL table alias mapping - plagefrais0_
+          - alias suffix - 0_
+          - suffixed key columns - {num_plag1_0_0_}
+
+2015-02-01 13:04:00,537 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity tp.minibankWS.entity.PlageFraisDossier [PESSIMISTIC_READ]: select plagefrais0_.num_plage as num_plag1_0_0_, plagefrais0_.frais as frais2_0_0_, plagefrais0_.montant_max as montant_3_0_0_, plagefrais0_.montant_min as montant_4_0_0_ from T_FraisDossier plagefrais0_ where plagefrais0_.num_plage=? lock in share mode
+2015-02-01 13:04:00,537 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@73992f]
+2015-02-01 13:04:00,537 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : frais
+2015-02-01 13:04:00,537 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : montant_max
+2015-02-01 13:04:00,537 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : montant_min
+2015-02-01 13:04:00,537 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2015-02-01 13:04:00,537 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2015-02-01 13:04:00,537 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=tp.minibankWS.entity.PlageFraisDossier)
+    - Returns
+       - EntityReturnImpl(entity=tp.minibankWS.entity.PlageFraisDossier, querySpaceUid=<gen:0>, path=tp.minibankWS.entity.PlageFraisDossier)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=tp.minibankWS.entity.PlageFraisDossier)
+          - SQL table alias mapping - plagefrais0_
+          - alias suffix - 0_
+          - suffixed key columns - {num_plag1_0_0_}
+
+2015-02-01 13:04:00,537 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity tp.minibankWS.entity.PlageFraisDossier [PESSIMISTIC_WRITE]: select plagefrais0_.num_plage as num_plag1_0_0_, plagefrais0_.frais as frais2_0_0_, plagefrais0_.montant_max as montant_3_0_0_, plagefrais0_.montant_min as montant_4_0_0_ from T_FraisDossier plagefrais0_ where plagefrais0_.num_plage=? for update
+2015-02-01 13:04:00,537 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@752564]
+2015-02-01 13:04:00,537 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : frais
+2015-02-01 13:04:00,537 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : montant_max
+2015-02-01 13:04:00,537 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : montant_min
+2015-02-01 13:04:00,538 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2015-02-01 13:04:00,538 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2015-02-01 13:04:00,538 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=tp.minibankWS.entity.PlageFraisDossier)
+    - Returns
+       - EntityReturnImpl(entity=tp.minibankWS.entity.PlageFraisDossier, querySpaceUid=<gen:0>, path=tp.minibankWS.entity.PlageFraisDossier)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=tp.minibankWS.entity.PlageFraisDossier)
+          - SQL table alias mapping - plagefrais0_
+          - alias suffix - 0_
+          - suffixed key columns - {num_plag1_0_0_}
+
+2015-02-01 13:04:00,538 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity tp.minibankWS.entity.PlageFraisDossier [PESSIMISTIC_FORCE_INCREMENT]: select plagefrais0_.num_plage as num_plag1_0_0_, plagefrais0_.frais as frais2_0_0_, plagefrais0_.montant_max as montant_3_0_0_, plagefrais0_.montant_min as montant_4_0_0_ from T_FraisDossier plagefrais0_ where plagefrais0_.num_plage=? for update
+2015-02-01 13:04:00,538 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1653c4]
+2015-02-01 13:04:00,538 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : frais
+2015-02-01 13:04:00,538 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : montant_max
+2015-02-01 13:04:00,538 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : montant_min
+2015-02-01 13:04:00,538 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2015-02-01 13:04:00,538 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2015-02-01 13:04:00,538 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=tp.minibankWS.entity.PlageFraisDossier)
+    - Returns
+       - EntityReturnImpl(entity=tp.minibankWS.entity.PlageFraisDossier, querySpaceUid=<gen:0>, path=tp.minibankWS.entity.PlageFraisDossier)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=tp.minibankWS.entity.PlageFraisDossier)
+          - SQL table alias mapping - plagefrais0_
+          - alias suffix - 0_
+          - suffixed key columns - {num_plag1_0_0_}
+
+2015-02-01 13:04:00,538 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity tp.minibankWS.entity.PlageFraisDossier [OPTIMISTIC]: select plagefrais0_.num_plage as num_plag1_0_0_, plagefrais0_.frais as frais2_0_0_, plagefrais0_.montant_max as montant_3_0_0_, plagefrais0_.montant_min as montant_4_0_0_ from T_FraisDossier plagefrais0_ where plagefrais0_.num_plage=?
+2015-02-01 13:04:00,538 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@95a6ed]
+2015-02-01 13:04:00,538 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : frais
+2015-02-01 13:04:00,538 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : montant_max
+2015-02-01 13:04:00,538 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : montant_min
+2015-02-01 13:04:00,539 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2015-02-01 13:04:00,539 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2015-02-01 13:04:00,539 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=tp.minibankWS.entity.PlageFraisDossier)
+    - Returns
+       - EntityReturnImpl(entity=tp.minibankWS.entity.PlageFraisDossier, querySpaceUid=<gen:0>, path=tp.minibankWS.entity.PlageFraisDossier)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=tp.minibankWS.entity.PlageFraisDossier)
+          - SQL table alias mapping - plagefrais0_
+          - alias suffix - 0_
+          - suffixed key columns - {num_plag1_0_0_}
+
+2015-02-01 13:04:00,539 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity tp.minibankWS.entity.PlageFraisDossier [OPTIMISTIC_FORCE_INCREMENT]: select plagefrais0_.num_plage as num_plag1_0_0_, plagefrais0_.frais as frais2_0_0_, plagefrais0_.montant_max as montant_3_0_0_, plagefrais0_.montant_min as montant_4_0_0_ from T_FraisDossier plagefrais0_ where plagefrais0_.num_plage=?
+2015-02-01 13:04:00,539 DEBUG main org.hibernate.loader.Loader - Static select for action ACTION_MERGE on entity tp.minibankWS.entity.PlageFraisDossier: select plagefrais0_.num_plage as num_plag1_0_0_, plagefrais0_.frais as frais2_0_0_, plagefrais0_.montant_max as montant_3_0_0_, plagefrais0_.montant_min as montant_4_0_0_ from T_FraisDossier plagefrais0_ where plagefrais0_.num_plage=?
+2015-02-01 13:04:00,539 DEBUG main org.hibernate.loader.Loader - Static select for action ACTION_REFRESH on entity tp.minibankWS.entity.PlageFraisDossier: select plagefrais0_.num_plage as num_plag1_0_0_, plagefrais0_.frais as frais2_0_0_, plagefrais0_.montant_max as montant_3_0_0_, plagefrais0_.montant_min as montant_4_0_0_ from T_FraisDossier plagefrais0_ where plagefrais0_.num_plage=?
+2015-02-01 13:04:00,539 DEBUG main org.hibernate.persister.entity.AbstractEntityPersister - Static SQL for entity: tp.minibankWS.entity.PlageTauxInteret
+2015-02-01 13:04:00,539 DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Version select: select num_plage from T_TauxInterets where num_plage =?
+2015-02-01 13:04:00,539 DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Snapshot select: select plagetauxi_.num_plage, plagetauxi_.nb_mois_max as nb_mois_2_1_, plagetauxi_.nb_mois_min as nb_mois_3_1_, plagetauxi_.taux_mens as taux_men4_1_ from T_TauxInterets plagetauxi_ where plagetauxi_.num_plage=?
+2015-02-01 13:04:00,539 DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Insert 0: insert into T_TauxInterets (nb_mois_max, nb_mois_min, taux_mens, num_plage) values (?, ?, ?, ?)
+2015-02-01 13:04:00,539 DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Update 0: update T_TauxInterets set nb_mois_max=?, nb_mois_min=?, taux_mens=? where num_plage=?
+2015-02-01 13:04:00,539 DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Delete 0: delete from T_TauxInterets where num_plage=?
+2015-02-01 13:04:00,539 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@939656]
+2015-02-01 13:04:00,539 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : nb_mois_max
+2015-02-01 13:04:00,540 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : nb_mois_min
+2015-02-01 13:04:00,540 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : taux_mensuel
+2015-02-01 13:04:00,540 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2015-02-01 13:04:00,540 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2015-02-01 13:04:00,540 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=tp.minibankWS.entity.PlageTauxInteret)
+    - Returns
+       - EntityReturnImpl(entity=tp.minibankWS.entity.PlageTauxInteret, querySpaceUid=<gen:0>, path=tp.minibankWS.entity.PlageTauxInteret)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=tp.minibankWS.entity.PlageTauxInteret)
+          - SQL table alias mapping - plagetauxi0_
+          - alias suffix - 0_
+          - suffixed key columns - {num_plag1_1_0_}
+
+2015-02-01 13:04:00,540 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity tp.minibankWS.entity.PlageTauxInteret [NONE]: select plagetauxi0_.num_plage as num_plag1_1_0_, plagetauxi0_.nb_mois_max as nb_mois_2_1_0_, plagetauxi0_.nb_mois_min as nb_mois_3_1_0_, plagetauxi0_.taux_mens as taux_men4_1_0_ from T_TauxInterets plagetauxi0_ where plagetauxi0_.num_plage=?
+2015-02-01 13:04:00,540 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1e93c14]
+2015-02-01 13:04:00,540 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : nb_mois_max
+2015-02-01 13:04:00,540 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : nb_mois_min
+2015-02-01 13:04:00,540 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : taux_mensuel
+2015-02-01 13:04:00,540 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2015-02-01 13:04:00,540 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2015-02-01 13:04:00,540 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=tp.minibankWS.entity.PlageTauxInteret)
+    - Returns
+       - EntityReturnImpl(entity=tp.minibankWS.entity.PlageTauxInteret, querySpaceUid=<gen:0>, path=tp.minibankWS.entity.PlageTauxInteret)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=tp.minibankWS.entity.PlageTauxInteret)
+          - SQL table alias mapping - plagetauxi0_
+          - alias suffix - 0_
+          - suffixed key columns - {num_plag1_1_0_}
+
+2015-02-01 13:04:00,540 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity tp.minibankWS.entity.PlageTauxInteret [READ]: select plagetauxi0_.num_plage as num_plag1_1_0_, plagetauxi0_.nb_mois_max as nb_mois_2_1_0_, plagetauxi0_.nb_mois_min as nb_mois_3_1_0_, plagetauxi0_.taux_mens as taux_men4_1_0_ from T_TauxInterets plagetauxi0_ where plagetauxi0_.num_plage=?
+2015-02-01 13:04:00,540 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1849172]
+2015-02-01 13:04:00,540 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : nb_mois_max
+2015-02-01 13:04:00,540 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : nb_mois_min
+2015-02-01 13:04:00,540 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : taux_mensuel
+2015-02-01 13:04:00,540 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2015-02-01 13:04:00,541 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2015-02-01 13:04:00,541 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=tp.minibankWS.entity.PlageTauxInteret)
+    - Returns
+       - EntityReturnImpl(entity=tp.minibankWS.entity.PlageTauxInteret, querySpaceUid=<gen:0>, path=tp.minibankWS.entity.PlageTauxInteret)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=tp.minibankWS.entity.PlageTauxInteret)
+          - SQL table alias mapping - plagetauxi0_
+          - alias suffix - 0_
+          - suffixed key columns - {num_plag1_1_0_}
+
+2015-02-01 13:04:00,541 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity tp.minibankWS.entity.PlageTauxInteret [UPGRADE]: select plagetauxi0_.num_plage as num_plag1_1_0_, plagetauxi0_.nb_mois_max as nb_mois_2_1_0_, plagetauxi0_.nb_mois_min as nb_mois_3_1_0_, plagetauxi0_.taux_mens as taux_men4_1_0_ from T_TauxInterets plagetauxi0_ where plagetauxi0_.num_plage=? for update
+2015-02-01 13:04:00,541 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5aa434]
+2015-02-01 13:04:00,541 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : nb_mois_max
+2015-02-01 13:04:00,541 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : nb_mois_min
+2015-02-01 13:04:00,541 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : taux_mensuel
+2015-02-01 13:04:00,541 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2015-02-01 13:04:00,541 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2015-02-01 13:04:00,541 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=tp.minibankWS.entity.PlageTauxInteret)
+    - Returns
+       - EntityReturnImpl(entity=tp.minibankWS.entity.PlageTauxInteret, querySpaceUid=<gen:0>, path=tp.minibankWS.entity.PlageTauxInteret)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=tp.minibankWS.entity.PlageTauxInteret)
+          - SQL table alias mapping - plagetauxi0_
+          - alias suffix - 0_
+          - suffixed key columns - {num_plag1_1_0_}
+
+2015-02-01 13:04:00,541 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity tp.minibankWS.entity.PlageTauxInteret [UPGRADE_NOWAIT]: select plagetauxi0_.num_plage as num_plag1_1_0_, plagetauxi0_.nb_mois_max as nb_mois_2_1_0_, plagetauxi0_.nb_mois_min as nb_mois_3_1_0_, plagetauxi0_.taux_mens as taux_men4_1_0_ from T_TauxInterets plagetauxi0_ where plagetauxi0_.num_plage=? for update
+2015-02-01 13:04:00,541 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@340dbb]
+2015-02-01 13:04:00,542 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : nb_mois_max
+2015-02-01 13:04:00,542 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : nb_mois_min
+2015-02-01 13:04:00,542 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : taux_mensuel
+2015-02-01 13:04:00,542 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2015-02-01 13:04:00,542 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2015-02-01 13:04:00,542 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=tp.minibankWS.entity.PlageTauxInteret)
+    - Returns
+       - EntityReturnImpl(entity=tp.minibankWS.entity.PlageTauxInteret, querySpaceUid=<gen:0>, path=tp.minibankWS.entity.PlageTauxInteret)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=tp.minibankWS.entity.PlageTauxInteret)
+          - SQL table alias mapping - plagetauxi0_
+          - alias suffix - 0_
+          - suffixed key columns - {num_plag1_1_0_}
+
+2015-02-01 13:04:00,542 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity tp.minibankWS.entity.PlageTauxInteret [UPGRADE_SKIPLOCKED]: select plagetauxi0_.num_plage as num_plag1_1_0_, plagetauxi0_.nb_mois_max as nb_mois_2_1_0_, plagetauxi0_.nb_mois_min as nb_mois_3_1_0_, plagetauxi0_.taux_mens as taux_men4_1_0_ from T_TauxInterets plagetauxi0_ where plagetauxi0_.num_plage=? for update
+2015-02-01 13:04:00,542 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1eea508]
+2015-02-01 13:04:00,542 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : nb_mois_max
+2015-02-01 13:04:00,542 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : nb_mois_min
+2015-02-01 13:04:00,542 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : taux_mensuel
+2015-02-01 13:04:00,542 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2015-02-01 13:04:00,542 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2015-02-01 13:04:00,542 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=tp.minibankWS.entity.PlageTauxInteret)
+    - Returns
+       - EntityReturnImpl(entity=tp.minibankWS.entity.PlageTauxInteret, querySpaceUid=<gen:0>, path=tp.minibankWS.entity.PlageTauxInteret)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=tp.minibankWS.entity.PlageTauxInteret)
+          - SQL table alias mapping - plagetauxi0_
+          - alias suffix - 0_
+          - suffixed key columns - {num_plag1_1_0_}
+
+2015-02-01 13:04:00,542 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity tp.minibankWS.entity.PlageTauxInteret [FORCE]: select plagetauxi0_.num_plage as num_plag1_1_0_, plagetauxi0_.nb_mois_max as nb_mois_2_1_0_, plagetauxi0_.nb_mois_min as nb_mois_3_1_0_, plagetauxi0_.taux_mens as taux_men4_1_0_ from T_TauxInterets plagetauxi0_ where plagetauxi0_.num_plage=? for update
+2015-02-01 13:04:00,542 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@183bb5e]
+2015-02-01 13:04:00,542 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : nb_mois_max
+2015-02-01 13:04:00,543 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : nb_mois_min
+2015-02-01 13:04:00,543 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : taux_mensuel
+2015-02-01 13:04:00,543 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2015-02-01 13:04:00,543 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2015-02-01 13:04:00,543 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=tp.minibankWS.entity.PlageTauxInteret)
+    - Returns
+       - EntityReturnImpl(entity=tp.minibankWS.entity.PlageTauxInteret, querySpaceUid=<gen:0>, path=tp.minibankWS.entity.PlageTauxInteret)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=tp.minibankWS.entity.PlageTauxInteret)
+          - SQL table alias mapping - plagetauxi0_
+          - alias suffix - 0_
+          - suffixed key columns - {num_plag1_1_0_}
+
+2015-02-01 13:04:00,543 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity tp.minibankWS.entity.PlageTauxInteret [PESSIMISTIC_READ]: select plagetauxi0_.num_plage as num_plag1_1_0_, plagetauxi0_.nb_mois_max as nb_mois_2_1_0_, plagetauxi0_.nb_mois_min as nb_mois_3_1_0_, plagetauxi0_.taux_mens as taux_men4_1_0_ from T_TauxInterets plagetauxi0_ where plagetauxi0_.num_plage=? lock in share mode
+2015-02-01 13:04:00,543 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@8d38f3]
+2015-02-01 13:04:00,543 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : nb_mois_max
+2015-02-01 13:04:00,543 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : nb_mois_min
+2015-02-01 13:04:00,543 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : taux_mensuel
+2015-02-01 13:04:00,543 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2015-02-01 13:04:00,543 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2015-02-01 13:04:00,543 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=tp.minibankWS.entity.PlageTauxInteret)
+    - Returns
+       - EntityReturnImpl(entity=tp.minibankWS.entity.PlageTauxInteret, querySpaceUid=<gen:0>, path=tp.minibankWS.entity.PlageTauxInteret)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=tp.minibankWS.entity.PlageTauxInteret)
+          - SQL table alias mapping - plagetauxi0_
+          - alias suffix - 0_
+          - suffixed key columns - {num_plag1_1_0_}
+
+2015-02-01 13:04:00,543 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity tp.minibankWS.entity.PlageTauxInteret [PESSIMISTIC_WRITE]: select plagetauxi0_.num_plage as num_plag1_1_0_, plagetauxi0_.nb_mois_max as nb_mois_2_1_0_, plagetauxi0_.nb_mois_min as nb_mois_3_1_0_, plagetauxi0_.taux_mens as taux_men4_1_0_ from T_TauxInterets plagetauxi0_ where plagetauxi0_.num_plage=? for update
+2015-02-01 13:04:00,543 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@16c5e87]
+2015-02-01 13:04:00,543 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : nb_mois_max
+2015-02-01 13:04:00,543 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : nb_mois_min
+2015-02-01 13:04:00,543 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : taux_mensuel
+2015-02-01 13:04:00,543 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2015-02-01 13:04:00,544 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2015-02-01 13:04:00,544 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=tp.minibankWS.entity.PlageTauxInteret)
+    - Returns
+       - EntityReturnImpl(entity=tp.minibankWS.entity.PlageTauxInteret, querySpaceUid=<gen:0>, path=tp.minibankWS.entity.PlageTauxInteret)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=tp.minibankWS.entity.PlageTauxInteret)
+          - SQL table alias mapping - plagetauxi0_
+          - alias suffix - 0_
+          - suffixed key columns - {num_plag1_1_0_}
+
+2015-02-01 13:04:00,544 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity tp.minibankWS.entity.PlageTauxInteret [PESSIMISTIC_FORCE_INCREMENT]: select plagetauxi0_.num_plage as num_plag1_1_0_, plagetauxi0_.nb_mois_max as nb_mois_2_1_0_, plagetauxi0_.nb_mois_min as nb_mois_3_1_0_, plagetauxi0_.taux_mens as taux_men4_1_0_ from T_TauxInterets plagetauxi0_ where plagetauxi0_.num_plage=? for update
+2015-02-01 13:04:00,544 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@27f722]
+2015-02-01 13:04:00,544 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : nb_mois_max
+2015-02-01 13:04:00,544 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : nb_mois_min
+2015-02-01 13:04:00,544 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : taux_mensuel
+2015-02-01 13:04:00,544 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2015-02-01 13:04:00,544 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2015-02-01 13:04:00,544 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=tp.minibankWS.entity.PlageTauxInteret)
+    - Returns
+       - EntityReturnImpl(entity=tp.minibankWS.entity.PlageTauxInteret, querySpaceUid=<gen:0>, path=tp.minibankWS.entity.PlageTauxInteret)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=tp.minibankWS.entity.PlageTauxInteret)
+          - SQL table alias mapping - plagetauxi0_
+          - alias suffix - 0_
+          - suffixed key columns - {num_plag1_1_0_}
+
+2015-02-01 13:04:00,544 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity tp.minibankWS.entity.PlageTauxInteret [OPTIMISTIC]: select plagetauxi0_.num_plage as num_plag1_1_0_, plagetauxi0_.nb_mois_max as nb_mois_2_1_0_, plagetauxi0_.nb_mois_min as nb_mois_3_1_0_, plagetauxi0_.taux_mens as taux_men4_1_0_ from T_TauxInterets plagetauxi0_ where plagetauxi0_.num_plage=?
+2015-02-01 13:04:00,544 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@954ea1]
+2015-02-01 13:04:00,544 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : nb_mois_max
+2015-02-01 13:04:00,544 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : nb_mois_min
+2015-02-01 13:04:00,544 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : taux_mensuel
+2015-02-01 13:04:00,544 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2015-02-01 13:04:00,544 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2015-02-01 13:04:00,545 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=tp.minibankWS.entity.PlageTauxInteret)
+    - Returns
+       - EntityReturnImpl(entity=tp.minibankWS.entity.PlageTauxInteret, querySpaceUid=<gen:0>, path=tp.minibankWS.entity.PlageTauxInteret)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=tp.minibankWS.entity.PlageTauxInteret)
+          - SQL table alias mapping - plagetauxi0_
+          - alias suffix - 0_
+          - suffixed key columns - {num_plag1_1_0_}
+
+2015-02-01 13:04:00,545 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity tp.minibankWS.entity.PlageTauxInteret [OPTIMISTIC_FORCE_INCREMENT]: select plagetauxi0_.num_plage as num_plag1_1_0_, plagetauxi0_.nb_mois_max as nb_mois_2_1_0_, plagetauxi0_.nb_mois_min as nb_mois_3_1_0_, plagetauxi0_.taux_mens as taux_men4_1_0_ from T_TauxInterets plagetauxi0_ where plagetauxi0_.num_plage=?
+2015-02-01 13:04:00,545 DEBUG main org.hibernate.loader.Loader - Static select for action ACTION_MERGE on entity tp.minibankWS.entity.PlageTauxInteret: select plagetauxi0_.num_plage as num_plag1_1_0_, plagetauxi0_.nb_mois_max as nb_mois_2_1_0_, plagetauxi0_.nb_mois_min as nb_mois_3_1_0_, plagetauxi0_.taux_mens as taux_men4_1_0_ from T_TauxInterets plagetauxi0_ where plagetauxi0_.num_plage=?
+2015-02-01 13:04:00,545 DEBUG main org.hibernate.loader.Loader - Static select for action ACTION_REFRESH on entity tp.minibankWS.entity.PlageTauxInteret: select plagetauxi0_.num_plage as num_plag1_1_0_, plagetauxi0_.nb_mois_max as nb_mois_2_1_0_, plagetauxi0_.nb_mois_min as nb_mois_3_1_0_, plagetauxi0_.taux_mens as taux_men4_1_0_ from T_TauxInterets plagetauxi0_ where plagetauxi0_.num_plage=?
+2015-02-01 13:04:00,545 DEBUG main org.hibernate.internal.SessionFactoryRegistry - Registering SessionFactory: 933ebfeb-6820-4726-b0bc-da2bd4eb417e (<unnamed>)
+2015-02-01 13:04:00,545 DEBUG main org.hibernate.internal.SessionFactoryRegistry - Not binding SessionFactory to JNDI, no JNDI name configured
+2015-02-01 13:04:00,545 DEBUG main org.hibernate.internal.SessionFactoryImpl - Instantiated session factory
+2015-02-01 13:04:00,545 DEBUG main org.hibernate.internal.NamedQueryRepository - Checking 0 named HQL queries
+2015-02-01 13:04:00,545 DEBUG main org.hibernate.internal.NamedQueryRepository - Checking 0 named SQL queries
+2015-02-01 13:04:00,546 DEBUG main org.hibernate.stat.internal.StatisticsInitiator - Statistics initialized [enabled=false]
+2015-02-01 13:04:00,546 DEBUG main org.hibernate.jpa.internal.schemagen.JpaSchemaGenerator - No actions specified; doing nothing
+2015-02-01 13:04:00,546 DEBUG main org.hibernate.jpa.internal.EntityManagerFactoryRegistry - Registering EntityManagerFactory: myPersistenceUnit 
+2015-02-01 13:04:00,546 WARN main org.hibernate.jpa.internal.EntityManagerFactoryRegistry - HHH000436: Entity manager factory name (myPersistenceUnit) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-02-01 13:04:00,547 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2015-02-01 13:04:00,549 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'myEmf'
+2015-02-01 13:04:00,549 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@700208: defining beans [myDataSource,org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor#0,myEmf,txManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,calculEmpruntImpl,fraisDossierDaoJpa,tauxInteretDaoJpa,gestionTauxFraisImpl]; root of factory hierarchy
+2015-02-01 13:04:00,549 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'myDataSource'
+2015-02-01 13:04:00,549 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor#0'
+2015-02-01 13:04:00,550 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'myEmf'
+2015-02-01 13:04:00,550 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'txManager'
+2015-02-01 13:04:00,550 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean 'txManager'
+2015-02-01 13:04:00,550 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Eagerly caching bean 'txManager' to allow for resolving potential circular references
+2015-02-01 13:04:00,550 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'myEmf'
+2015-02-01 13:04:00,550 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2015-02-01 13:04:00,552 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Invoking afterPropertiesSet() on bean with name 'txManager'
+2015-02-01 13:04:00,552 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2015-02-01 13:04:00,553 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'txManager'
+2015-02-01 13:04:00,553 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
+2015-02-01 13:04:00,553 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0'
+2015-02-01 13:04:00,553 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.transaction.interceptor.TransactionInterceptor#0'
+2015-02-01 13:04:00,553 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean 'org.springframework.transaction.interceptor.TransactionInterceptor#0'
+2015-02-01 13:04:00,554 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.transaction.interceptor.TransactionInterceptor#0' to allow for resolving potential circular references
+2015-02-01 13:04:00,554 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0'
+2015-02-01 13:04:00,554 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Invoking afterPropertiesSet() on bean with name 'org.springframework.transaction.interceptor.TransactionInterceptor#0'
+2015-02-01 13:04:00,554 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.transaction.interceptor.TransactionInterceptor#0'
+2015-02-01 13:04:00,554 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2015-02-01 13:04:00,554 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'calculEmpruntImpl'
+2015-02-01 13:04:00,554 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean 'calculEmpruntImpl'
+2015-02-01 13:04:00,554 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Eagerly caching bean 'calculEmpruntImpl' to allow for resolving potential circular references
+2015-02-01 13:04:00,554 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2015-02-01 13:04:00,554 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'calculEmpruntImpl'
+2015-02-01 13:04:00,554 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'fraisDossierDaoJpa'
+2015-02-01 13:04:00,554 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean 'fraisDossierDaoJpa'
+2015-02-01 13:04:00,554 DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [tp.minibankWS.dao.FraisDossierDaoJpa]: PersistenceElement for private javax.persistence.EntityManager tp.minibankWS.dao.FraisDossierDaoJpa.entityManager
+2015-02-01 13:04:00,554 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Eagerly caching bean 'fraisDossierDaoJpa' to allow for resolving potential circular references
+2015-02-01 13:04:00,554 DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected method of bean 'fraisDossierDaoJpa': PersistenceElement for private javax.persistence.EntityManager tp.minibankWS.dao.FraisDossierDaoJpa.entityManager
+2015-02-01 13:04:00,555 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'myEmf'
+2015-02-01 13:04:00,555 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2015-02-01 13:04:00,555 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'fraisDossierDaoJpa'
+2015-02-01 13:04:00,555 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'tauxInteretDaoJpa'
+2015-02-01 13:04:00,555 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean 'tauxInteretDaoJpa'
+2015-02-01 13:04:00,555 DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [tp.minibankWS.dao.TauxInteretDaoJpa]: PersistenceElement for private javax.persistence.EntityManager tp.minibankWS.dao.TauxInteretDaoJpa.entityManager
+2015-02-01 13:04:00,555 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Eagerly caching bean 'tauxInteretDaoJpa' to allow for resolving potential circular references
+2015-02-01 13:04:00,555 DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected method of bean 'tauxInteretDaoJpa': PersistenceElement for private javax.persistence.EntityManager tp.minibankWS.dao.TauxInteretDaoJpa.entityManager
+2015-02-01 13:04:00,555 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'myEmf'
+2015-02-01 13:04:00,555 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2015-02-01 13:04:00,556 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'tauxInteretDaoJpa'
+2015-02-01 13:04:00,556 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'gestionTauxFraisImpl'
+2015-02-01 13:04:00,556 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean 'gestionTauxFraisImpl'
+2015-02-01 13:04:00,556 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Eagerly caching bean 'gestionTauxFraisImpl' to allow for resolving potential circular references
+2015-02-01 13:04:00,556 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'fraisDossierDaoJpa'
+2015-02-01 13:04:00,556 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'tauxInteretDaoJpa'
+2015-02-01 13:04:00,556 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2015-02-01 13:04:00,557 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'gestionTauxFraisImpl'
+2015-02-01 13:04:00,557 DEBUG main org.springframework.context.support.ClassPathXmlApplicationContext - Unable to locate LifecycleProcessor with name 'lifecycleProcessor': using default [org.springframework.context.support.DefaultLifecycleProcessor@a96e78]
+2015-02-01 13:04:00,558 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'lifecycleProcessor'
+2015-02-01 13:04:00,559 DEBUG main org.springframework.core.env.PropertySourcesPropertyResolver - Searching for key 'spring.liveBeansView.mbeanDomain' in [systemProperties]
+2015-02-01 13:04:00,559 DEBUG main org.springframework.core.env.PropertySourcesPropertyResolver - Searching for key 'spring.liveBeansView.mbeanDomain' in [systemEnvironment]
+2015-02-01 13:04:00,559 DEBUG main org.springframework.core.env.PropertySourcesPropertyResolver - Could not find key 'spring.liveBeansView.mbeanDomain' in any property source. Returning [null]
+2015-02-01 13:04:00,559 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'fraisDossierDaoJpa'
+2015-02-01 13:04:00,559 DEBUG main org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
+2015-02-01 13:04:00,559 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - parse() - HQL: select p from tp.minibankWS.entity.PlageFraisDossier as p
+2015-02-01 13:04:00,560 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - --- HQL AST ---
+ \-[QUERY] Node: 'query'
+    \-[SELECT_FROM] Node: 'SELECT_FROM'
+       +-[FROM] Node: 'from'
+       |  \-[RANGE] Node: 'RANGE'
+       |     +-[DOT] Node: '.'
+       |     |  +-[DOT] Node: '.'
+       |     |  |  +-[DOT] Node: '.'
+       |     |  |  |  +-[IDENT] Node: 'tp'
+       |     |  |  |  \-[IDENT] Node: 'minibankWS'
+       |     |  |  \-[IDENT] Node: 'entity'
+       |     |  \-[IDENT] Node: 'PlageFraisDossier'
+       |     \-[ALIAS] Node: 'p'
+       \-[SELECT] Node: 'select'
+          \-[IDENT] Node: 'p'
+
+2015-02-01 13:04:00,560 DEBUG main org.hibernate.hql.internal.ast.ErrorCounter - throwQueryException() : no errors
+2015-02-01 13:04:00,560 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select << begin [level=1, statement=select]
+2015-02-01 13:04:00,560 DEBUG main org.hibernate.hql.internal.ast.tree.FromElement - FromClause{level=1} : tp.minibankWS.entity.PlageFraisDossier (p) -> plagefrais0_
+2015-02-01 13:04:00,560 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : p -> plagefrais0_.num_plage
+2015-02-01 13:04:00,560 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select : finishing up [level=1, statement=select]
+2015-02-01 13:04:00,560 DEBUG main org.hibernate.hql.internal.ast.HqlSqlWalker - processQuery() :  ( SELECT ( {select clause} plagefrais0_.num_plage ) ( FromClause{level=1} T_FraisDossier plagefrais0_ ) )
+2015-02-01 13:04:00,562 DEBUG main org.hibernate.hql.internal.ast.util.JoinProcessor - Using FROM fragment [T_FraisDossier plagefrais0_]
+2015-02-01 13:04:00,562 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select >> end [level=1, statement=select]
+2015-02-01 13:04:00,562 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - --- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (T_FraisDossier)
+    +-[SELECT_CLAUSE] SelectClause: '{select clause}'
+    |  +-[ALIAS_REF] IdentNode: 'plagefrais0_.num_plage as num_plag1_0_' {alias=p, className=tp.minibankWS.entity.PlageFraisDossier, tableAlias=plagefrais0_}
+    |  \-[SQL_TOKEN] SqlFragment: 'plagefrais0_.frais as frais2_0_, plagefrais0_.montant_max as montant_3_0_, plagefrais0_.montant_min as montant_4_0_'
+    \-[FROM] FromClause: 'from' FromClause{level=1, fromElementCounter=1, fromElements=1, fromElementByClassAlias=[p], fromElementByTableAlias=[plagefrais0_], fromElementsByPath=[], collectionJoinFromElementsByPath=[], impliedElements=[]}
+       \-[FROM_FRAGMENT] FromElement: 'T_FraisDossier plagefrais0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=p,role=null,tableName=T_FraisDossier,tableAlias=plagefrais0_,origin=null,columns={,className=tp.minibankWS.entity.PlageFraisDossier}}
+
+2015-02-01 13:04:00,562 DEBUG main org.hibernate.hql.internal.ast.ErrorCounter - throwQueryException() : no errors
+2015-02-01 13:04:00,562 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - HQL: select p from tp.minibankWS.entity.PlageFraisDossier as p
+2015-02-01 13:04:00,562 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - SQL: select plagefrais0_.num_plage as num_plag1_0_, plagefrais0_.frais as frais2_0_, plagefrais0_.montant_max as montant_3_0_, plagefrais0_.montant_min as montant_4_0_ from T_FraisDossier plagefrais0_
+2015-02-01 13:04:00,562 DEBUG main org.hibernate.hql.internal.ast.ErrorCounter - throwQueryException() : no errors
+2015-02-01 13:04:00,563 DEBUG main org.hibernate.SQL - select plagefrais0_.num_plage as num_plag1_0_, plagefrais0_.frais as frais2_0_, plagefrais0_.montant_max as montant_3_0_, plagefrais0_.montant_min as montant_4_0_ from T_FraisDossier plagefrais0_
+2015-02-01 13:04:00,563 DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Obtaining JDBC connection
+2015-02-01 13:04:00,563 DEBUG main org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost/tauxfraisdb]
+2015-02-01 13:04:00,572 DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Obtained JDBC connection
+2015-02-01 13:04:00,573 DEBUG main org.hibernate.loader.Loader - Result set row: 0
+2015-02-01 13:04:00,574 DEBUG main org.hibernate.loader.Loader - Result row: EntityKey[tp.minibankWS.entity.PlageFraisDossier#1]
+2015-02-01 13:04:00,574 DEBUG main org.hibernate.loader.Loader - Result set row: 1
+2015-02-01 13:04:00,574 DEBUG main org.hibernate.loader.Loader - Result row: EntityKey[tp.minibankWS.entity.PlageFraisDossier#2]
+2015-02-01 13:04:00,574 DEBUG main org.hibernate.loader.Loader - Result set row: 2
+2015-02-01 13:04:00,574 DEBUG main org.hibernate.loader.Loader - Result row: EntityKey[tp.minibankWS.entity.PlageFraisDossier#3]
+2015-02-01 13:04:00,575 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Resolving associations for [tp.minibankWS.entity.PlageFraisDossier#1]
+2015-02-01 13:04:00,575 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Done materializing entity [tp.minibankWS.entity.PlageFraisDossier#1]
+2015-02-01 13:04:00,575 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Resolving associations for [tp.minibankWS.entity.PlageFraisDossier#2]
+2015-02-01 13:04:00,575 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Done materializing entity [tp.minibankWS.entity.PlageFraisDossier#2]
+2015-02-01 13:04:00,575 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Resolving associations for [tp.minibankWS.entity.PlageFraisDossier#3]
+2015-02-01 13:04:00,575 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Done materializing entity [tp.minibankWS.entity.PlageFraisDossier#3]
+2015-02-01 13:04:00,576 DEBUG main org.springframework.orm.jpa.EntityManagerFactoryUtils - Closing JPA EntityManager
+2015-02-01 13:04:00,576 DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Releasing JDBC connection
+2015-02-01 13:04:00,576 DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Released JDBC connection
+2015-02-01 13:04:00,578 DEBUG main org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
+2015-02-01 13:04:00,578 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - parse() - HQL: select p from tp.minibankWS.entity.PlageFraisDossier as p where p.montant_max >= 200.0 and p.montant_min <= 200.0
+2015-02-01 13:04:00,581 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - --- HQL AST ---
+ \-[QUERY] Node: 'query'
+    +-[SELECT_FROM] Node: 'SELECT_FROM'
+    |  +-[FROM] Node: 'from'
+    |  |  \-[RANGE] Node: 'RANGE'
+    |  |     +-[DOT] Node: '.'
+    |  |     |  +-[DOT] Node: '.'
+    |  |     |  |  +-[DOT] Node: '.'
+    |  |     |  |  |  +-[IDENT] Node: 'tp'
+    |  |     |  |  |  \-[IDENT] Node: 'minibankWS'
+    |  |     |  |  \-[IDENT] Node: 'entity'
+    |  |     |  \-[IDENT] Node: 'PlageFraisDossier'
+    |  |     \-[ALIAS] Node: 'p'
+    |  \-[SELECT] Node: 'select'
+    |     \-[IDENT] Node: 'p'
+    \-[WHERE] Node: 'where'
+       \-[AND] Node: 'and'
+          +-[GE] Node: '>='
+          |  +-[DOT] Node: '.'
+          |  |  +-[IDENT] Node: 'p'
+          |  |  \-[IDENT] Node: 'montant_max'
+          |  \-[NUM_DOUBLE] Node: '200.0'
+          \-[LE] Node: '<='
+             +-[DOT] Node: '.'
+             |  +-[IDENT] Node: 'p'
+             |  \-[IDENT] Node: 'montant_min'
+             \-[NUM_DOUBLE] Node: '200.0'
+
+2015-02-01 13:04:00,581 DEBUG main org.hibernate.hql.internal.ast.ErrorCounter - throwQueryException() : no errors
+2015-02-01 13:04:00,582 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select << begin [level=1, statement=select]
+2015-02-01 13:04:00,582 DEBUG main org.hibernate.hql.internal.ast.tree.FromElement - FromClause{level=1} : tp.minibankWS.entity.PlageFraisDossier (p) -> plagefrais0_
+2015-02-01 13:04:00,582 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : p -> plagefrais0_.num_plage
+2015-02-01 13:04:00,582 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : p -> plagefrais0_.num_plage
+2015-02-01 13:04:00,582 DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - getDataType() : montant_max -> org.hibernate.type.IntegerType@12139e
+2015-02-01 13:04:00,582 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : p.montant_max -> plagefrais0_.montant_max
+2015-02-01 13:04:00,583 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : p -> plagefrais0_.num_plage
+2015-02-01 13:04:00,584 DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - getDataType() : montant_min -> org.hibernate.type.IntegerType@12139e
+2015-02-01 13:04:00,584 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : p.montant_min -> plagefrais0_.montant_min
+2015-02-01 13:04:00,585 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select : finishing up [level=1, statement=select]
+2015-02-01 13:04:00,585 DEBUG main org.hibernate.hql.internal.ast.HqlSqlWalker - processQuery() :  ( SELECT ( {select clause} plagefrais0_.num_plage ) ( FromClause{level=1} T_FraisDossier plagefrais0_ ) ( where ( and ( >= ( plagefrais0_.montant_max plagefrais0_.num_plage montant_max ) 200.0 ) ( <= ( plagefrais0_.montant_min plagefrais0_.num_plage montant_min ) 200.0 ) ) ) )
+2015-02-01 13:04:00,585 DEBUG main org.hibernate.hql.internal.ast.util.JoinProcessor - Using FROM fragment [T_FraisDossier plagefrais0_]
+2015-02-01 13:04:00,585 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select >> end [level=1, statement=select]
+2015-02-01 13:04:00,586 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - --- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (T_FraisDossier)
+    +-[SELECT_CLAUSE] SelectClause: '{select clause}'
+    |  +-[ALIAS_REF] IdentNode: 'plagefrais0_.num_plage as num_plag1_0_' {alias=p, className=tp.minibankWS.entity.PlageFraisDossier, tableAlias=plagefrais0_}
+    |  \-[SQL_TOKEN] SqlFragment: 'plagefrais0_.frais as frais2_0_, plagefrais0_.montant_max as montant_3_0_, plagefrais0_.montant_min as montant_4_0_'
+    +-[FROM] FromClause: 'from' FromClause{level=1, fromElementCounter=1, fromElements=1, fromElementByClassAlias=[p], fromElementByTableAlias=[plagefrais0_], fromElementsByPath=[], collectionJoinFromElementsByPath=[], impliedElements=[]}
+    |  \-[FROM_FRAGMENT] FromElement: 'T_FraisDossier plagefrais0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=p,role=null,tableName=T_FraisDossier,tableAlias=plagefrais0_,origin=null,columns={,className=tp.minibankWS.entity.PlageFraisDossier}}
+    \-[WHERE] SqlNode: 'where'
+       \-[AND] SqlNode: 'and'
+          +-[GE] BinaryLogicOperatorNode: '>='
+          |  +-[DOT] DotNode: 'plagefrais0_.montant_max' {propertyName=montant_max,dereferenceType=PRIMITIVE,getPropertyPath=montant_max,path=p.montant_max,tableAlias=plagefrais0_,className=tp.minibankWS.entity.PlageFraisDossier,classAlias=p}
+          |  |  +-[ALIAS_REF] IdentNode: 'plagefrais0_.num_plage' {alias=p, className=tp.minibankWS.entity.PlageFraisDossier, tableAlias=plagefrais0_}
+          |  |  \-[IDENT] IdentNode: 'montant_max' {originalText=montant_max}
+          |  \-[NUM_DOUBLE] LiteralNode: '200.0'
+          \-[LE] BinaryLogicOperatorNode: '<='
+             +-[DOT] DotNode: 'plagefrais0_.montant_min' {propertyName=montant_min,dereferenceType=PRIMITIVE,getPropertyPath=montant_min,path=p.montant_min,tableAlias=plagefrais0_,className=tp.minibankWS.entity.PlageFraisDossier,classAlias=p}
+             |  +-[ALIAS_REF] IdentNode: 'plagefrais0_.num_plage' {alias=p, className=tp.minibankWS.entity.PlageFraisDossier, tableAlias=plagefrais0_}
+             |  \-[IDENT] IdentNode: 'montant_min' {originalText=montant_min}
+             \-[NUM_DOUBLE] LiteralNode: '200.0'
+
+2015-02-01 13:04:00,586 DEBUG main org.hibernate.hql.internal.ast.ErrorCounter - throwQueryException() : no errors
+2015-02-01 13:04:00,586 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - HQL: select p from tp.minibankWS.entity.PlageFraisDossier as p where p.montant_max >= 200.0 and p.montant_min <= 200.0
+2015-02-01 13:04:00,586 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - SQL: select plagefrais0_.num_plage as num_plag1_0_, plagefrais0_.frais as frais2_0_, plagefrais0_.montant_max as montant_3_0_, plagefrais0_.montant_min as montant_4_0_ from T_FraisDossier plagefrais0_ where plagefrais0_.montant_max>=200.0 and plagefrais0_.montant_min<=200.0
+2015-02-01 13:04:00,586 DEBUG main org.hibernate.hql.internal.ast.ErrorCounter - throwQueryException() : no errors
+2015-02-01 13:04:00,587 DEBUG main org.hibernate.SQL - select plagefrais0_.num_plage as num_plag1_0_, plagefrais0_.frais as frais2_0_, plagefrais0_.montant_max as montant_3_0_, plagefrais0_.montant_min as montant_4_0_ from T_FraisDossier plagefrais0_ where plagefrais0_.montant_max>=200.0 and plagefrais0_.montant_min<=200.0
+2015-02-01 13:04:00,589 DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Obtaining JDBC connection
+2015-02-01 13:04:00,589 DEBUG main org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost/tauxfraisdb]
+2015-02-01 13:04:00,597 DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Obtained JDBC connection
+2015-02-01 13:04:00,597 DEBUG main org.hibernate.loader.Loader - Result set row: 0
+2015-02-01 13:04:00,597 DEBUG main org.hibernate.loader.Loader - Result row: EntityKey[tp.minibankWS.entity.PlageFraisDossier#1]
+2015-02-01 13:04:00,597 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Resolving associations for [tp.minibankWS.entity.PlageFraisDossier#1]
+2015-02-01 13:04:00,597 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Done materializing entity [tp.minibankWS.entity.PlageFraisDossier#1]
+2015-02-01 13:04:00,598 DEBUG main org.springframework.orm.jpa.EntityManagerFactoryUtils - Closing JPA EntityManager
+2015-02-01 13:04:00,598 DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Releasing JDBC connection
+2015-02-01 13:04:00,598 DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Released JDBC connection
+2015-02-01 13:04:00,598 DEBUG main org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
+2015-02-01 13:04:00,599 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - parse() - HQL: select p from tp.minibankWS.entity.PlageFraisDossier as p where p.montant_max >= 50000.0 and p.montant_min <= 50000.0
+2015-02-01 13:04:00,601 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - --- HQL AST ---
+ \-[QUERY] Node: 'query'
+    +-[SELECT_FROM] Node: 'SELECT_FROM'
+    |  +-[FROM] Node: 'from'
+    |  |  \-[RANGE] Node: 'RANGE'
+    |  |     +-[DOT] Node: '.'
+    |  |     |  +-[DOT] Node: '.'
+    |  |     |  |  +-[DOT] Node: '.'
+    |  |     |  |  |  +-[IDENT] Node: 'tp'
+    |  |     |  |  |  \-[IDENT] Node: 'minibankWS'
+    |  |     |  |  \-[IDENT] Node: 'entity'
+    |  |     |  \-[IDENT] Node: 'PlageFraisDossier'
+    |  |     \-[ALIAS] Node: 'p'
+    |  \-[SELECT] Node: 'select'
+    |     \-[IDENT] Node: 'p'
+    \-[WHERE] Node: 'where'
+       \-[AND] Node: 'and'
+          +-[GE] Node: '>='
+          |  +-[DOT] Node: '.'
+          |  |  +-[IDENT] Node: 'p'
+          |  |  \-[IDENT] Node: 'montant_max'
+          |  \-[NUM_DOUBLE] Node: '50000.0'
+          \-[LE] Node: '<='
+             +-[DOT] Node: '.'
+             |  +-[IDENT] Node: 'p'
+             |  \-[IDENT] Node: 'montant_min'
+             \-[NUM_DOUBLE] Node: '50000.0'
+
+2015-02-01 13:04:00,601 DEBUG main org.hibernate.hql.internal.ast.ErrorCounter - throwQueryException() : no errors
+2015-02-01 13:04:00,601 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select << begin [level=1, statement=select]
+2015-02-01 13:04:00,601 DEBUG main org.hibernate.hql.internal.ast.tree.FromElement - FromClause{level=1} : tp.minibankWS.entity.PlageFraisDossier (p) -> plagefrais0_
+2015-02-01 13:04:00,601 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : p -> plagefrais0_.num_plage
+2015-02-01 13:04:00,601 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : p -> plagefrais0_.num_plage
+2015-02-01 13:04:00,601 DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - getDataType() : montant_max -> org.hibernate.type.IntegerType@12139e
+2015-02-01 13:04:00,602 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : p.montant_max -> plagefrais0_.montant_max
+2015-02-01 13:04:00,602 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : p -> plagefrais0_.num_plage
+2015-02-01 13:04:00,602 DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - getDataType() : montant_min -> org.hibernate.type.IntegerType@12139e
+2015-02-01 13:04:00,602 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : p.montant_min -> plagefrais0_.montant_min
+2015-02-01 13:04:00,602 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select : finishing up [level=1, statement=select]
+2015-02-01 13:04:00,602 DEBUG main org.hibernate.hql.internal.ast.HqlSqlWalker - processQuery() :  ( SELECT ( {select clause} plagefrais0_.num_plage ) ( FromClause{level=1} T_FraisDossier plagefrais0_ ) ( where ( and ( >= ( plagefrais0_.montant_max plagefrais0_.num_plage montant_max ) 50000.0 ) ( <= ( plagefrais0_.montant_min plagefrais0_.num_plage montant_min ) 50000.0 ) ) ) )
+2015-02-01 13:04:00,602 DEBUG main org.hibernate.hql.internal.ast.util.JoinProcessor - Using FROM fragment [T_FraisDossier plagefrais0_]
+2015-02-01 13:04:00,602 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select >> end [level=1, statement=select]
+2015-02-01 13:04:00,603 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - --- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (T_FraisDossier)
+    +-[SELECT_CLAUSE] SelectClause: '{select clause}'
+    |  +-[ALIAS_REF] IdentNode: 'plagefrais0_.num_plage as num_plag1_0_' {alias=p, className=tp.minibankWS.entity.PlageFraisDossier, tableAlias=plagefrais0_}
+    |  \-[SQL_TOKEN] SqlFragment: 'plagefrais0_.frais as frais2_0_, plagefrais0_.montant_max as montant_3_0_, plagefrais0_.montant_min as montant_4_0_'
+    +-[FROM] FromClause: 'from' FromClause{level=1, fromElementCounter=1, fromElements=1, fromElementByClassAlias=[p], fromElementByTableAlias=[plagefrais0_], fromElementsByPath=[], collectionJoinFromElementsByPath=[], impliedElements=[]}
+    |  \-[FROM_FRAGMENT] FromElement: 'T_FraisDossier plagefrais0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=p,role=null,tableName=T_FraisDossier,tableAlias=plagefrais0_,origin=null,columns={,className=tp.minibankWS.entity.PlageFraisDossier}}
+    \-[WHERE] SqlNode: 'where'
+       \-[AND] SqlNode: 'and'
+          +-[GE] BinaryLogicOperatorNode: '>='
+          |  +-[DOT] DotNode: 'plagefrais0_.montant_max' {propertyName=montant_max,dereferenceType=PRIMITIVE,getPropertyPath=montant_max,path=p.montant_max,tableAlias=plagefrais0_,className=tp.minibankWS.entity.PlageFraisDossier,classAlias=p}
+          |  |  +-[ALIAS_REF] IdentNode: 'plagefrais0_.num_plage' {alias=p, className=tp.minibankWS.entity.PlageFraisDossier, tableAlias=plagefrais0_}
+          |  |  \-[IDENT] IdentNode: 'montant_max' {originalText=montant_max}
+          |  \-[NUM_DOUBLE] LiteralNode: '50000.0'
+          \-[LE] BinaryLogicOperatorNode: '<='
+             +-[DOT] DotNode: 'plagefrais0_.montant_min' {propertyName=montant_min,dereferenceType=PRIMITIVE,getPropertyPath=montant_min,path=p.montant_min,tableAlias=plagefrais0_,className=tp.minibankWS.entity.PlageFraisDossier,classAlias=p}
+             |  +-[ALIAS_REF] IdentNode: 'plagefrais0_.num_plage' {alias=p, className=tp.minibankWS.entity.PlageFraisDossier, tableAlias=plagefrais0_}
+             |  \-[IDENT] IdentNode: 'montant_min' {originalText=montant_min}
+             \-[NUM_DOUBLE] LiteralNode: '50000.0'
+
+2015-02-01 13:04:00,603 DEBUG main org.hibernate.hql.internal.ast.ErrorCounter - throwQueryException() : no errors
+2015-02-01 13:04:00,603 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - HQL: select p from tp.minibankWS.entity.PlageFraisDossier as p where p.montant_max >= 50000.0 and p.montant_min <= 50000.0
+2015-02-01 13:04:00,603 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - SQL: select plagefrais0_.num_plage as num_plag1_0_, plagefrais0_.frais as frais2_0_, plagefrais0_.montant_max as montant_3_0_, plagefrais0_.montant_min as montant_4_0_ from T_FraisDossier plagefrais0_ where plagefrais0_.montant_max>=50000.0 and plagefrais0_.montant_min<=50000.0
+2015-02-01 13:04:00,603 DEBUG main org.hibernate.hql.internal.ast.ErrorCounter - throwQueryException() : no errors
+2015-02-01 13:04:00,603 DEBUG main org.hibernate.SQL - select plagefrais0_.num_plage as num_plag1_0_, plagefrais0_.frais as frais2_0_, plagefrais0_.montant_max as montant_3_0_, plagefrais0_.montant_min as montant_4_0_ from T_FraisDossier plagefrais0_ where plagefrais0_.montant_max>=50000.0 and plagefrais0_.montant_min<=50000.0
+2015-02-01 13:04:00,604 DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Obtaining JDBC connection
+2015-02-01 13:04:00,604 DEBUG main org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost/tauxfraisdb]
+2015-02-01 13:04:00,610 DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Obtained JDBC connection
+2015-02-01 13:04:00,611 DEBUG main org.hibernate.loader.Loader - Result set row: 0
+2015-02-01 13:04:00,611 DEBUG main org.hibernate.loader.Loader - Result row: EntityKey[tp.minibankWS.entity.PlageFraisDossier#2]
+2015-02-01 13:04:00,611 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Resolving associations for [tp.minibankWS.entity.PlageFraisDossier#2]
+2015-02-01 13:04:00,611 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Done materializing entity [tp.minibankWS.entity.PlageFraisDossier#2]
+2015-02-01 13:04:00,612 DEBUG main org.springframework.orm.jpa.EntityManagerFactoryUtils - Closing JPA EntityManager
+2015-02-01 13:04:00,612 DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Releasing JDBC connection
+2015-02-01 13:04:00,612 DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Released JDBC connection
+2015-02-01 13:04:00,612 DEBUG main org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
+2015-02-01 13:04:00,613 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - parse() - HQL: select p from tp.minibankWS.entity.PlageFraisDossier as p where p.montant_max >= 200000.0 and p.montant_min <= 200000.0
+2015-02-01 13:04:00,618 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - --- HQL AST ---
+ \-[QUERY] Node: 'query'
+    +-[SELECT_FROM] Node: 'SELECT_FROM'
+    |  +-[FROM] Node: 'from'
+    |  |  \-[RANGE] Node: 'RANGE'
+    |  |     +-[DOT] Node: '.'
+    |  |     |  +-[DOT] Node: '.'
+    |  |     |  |  +-[DOT] Node: '.'
+    |  |     |  |  |  +-[IDENT] Node: 'tp'
+    |  |     |  |  |  \-[IDENT] Node: 'minibankWS'
+    |  |     |  |  \-[IDENT] Node: 'entity'
+    |  |     |  \-[IDENT] Node: 'PlageFraisDossier'
+    |  |     \-[ALIAS] Node: 'p'
+    |  \-[SELECT] Node: 'select'
+    |     \-[IDENT] Node: 'p'
+    \-[WHERE] Node: 'where'
+       \-[AND] Node: 'and'
+          +-[GE] Node: '>='
+          |  +-[DOT] Node: '.'
+          |  |  +-[IDENT] Node: 'p'
+          |  |  \-[IDENT] Node: 'montant_max'
+          |  \-[NUM_DOUBLE] Node: '200000.0'
+          \-[LE] Node: '<='
+             +-[DOT] Node: '.'
+             |  +-[IDENT] Node: 'p'
+             |  \-[IDENT] Node: 'montant_min'
+             \-[NUM_DOUBLE] Node: '200000.0'
+
+2015-02-01 13:04:00,618 DEBUG main org.hibernate.hql.internal.ast.ErrorCounter - throwQueryException() : no errors
+2015-02-01 13:04:00,618 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select << begin [level=1, statement=select]
+2015-02-01 13:04:00,618 DEBUG main org.hibernate.hql.internal.ast.tree.FromElement - FromClause{level=1} : tp.minibankWS.entity.PlageFraisDossier (p) -> plagefrais0_
+2015-02-01 13:04:00,618 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : p -> plagefrais0_.num_plage
+2015-02-01 13:04:00,618 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : p -> plagefrais0_.num_plage
+2015-02-01 13:04:00,618 DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - getDataType() : montant_max -> org.hibernate.type.IntegerType@12139e
+2015-02-01 13:04:00,618 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : p.montant_max -> plagefrais0_.montant_max
+2015-02-01 13:04:00,619 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : p -> plagefrais0_.num_plage
+2015-02-01 13:04:00,620 DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - getDataType() : montant_min -> org.hibernate.type.IntegerType@12139e
+2015-02-01 13:04:00,620 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : p.montant_min -> plagefrais0_.montant_min
+2015-02-01 13:04:00,620 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select : finishing up [level=1, statement=select]
+2015-02-01 13:04:00,620 DEBUG main org.hibernate.hql.internal.ast.HqlSqlWalker - processQuery() :  ( SELECT ( {select clause} plagefrais0_.num_plage ) ( FromClause{level=1} T_FraisDossier plagefrais0_ ) ( where ( and ( >= ( plagefrais0_.montant_max plagefrais0_.num_plage montant_max ) 200000.0 ) ( <= ( plagefrais0_.montant_min plagefrais0_.num_plage montant_min ) 200000.0 ) ) ) )
+2015-02-01 13:04:00,620 DEBUG main org.hibernate.hql.internal.ast.util.JoinProcessor - Using FROM fragment [T_FraisDossier plagefrais0_]
+2015-02-01 13:04:00,620 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select >> end [level=1, statement=select]
+2015-02-01 13:04:00,620 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - --- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (T_FraisDossier)
+    +-[SELECT_CLAUSE] SelectClause: '{select clause}'
+    |  +-[ALIAS_REF] IdentNode: 'plagefrais0_.num_plage as num_plag1_0_' {alias=p, className=tp.minibankWS.entity.PlageFraisDossier, tableAlias=plagefrais0_}
+    |  \-[SQL_TOKEN] SqlFragment: 'plagefrais0_.frais as frais2_0_, plagefrais0_.montant_max as montant_3_0_, plagefrais0_.montant_min as montant_4_0_'
+    +-[FROM] FromClause: 'from' FromClause{level=1, fromElementCounter=1, fromElements=1, fromElementByClassAlias=[p], fromElementByTableAlias=[plagefrais0_], fromElementsByPath=[], collectionJoinFromElementsByPath=[], impliedElements=[]}
+    |  \-[FROM_FRAGMENT] FromElement: 'T_FraisDossier plagefrais0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=p,role=null,tableName=T_FraisDossier,tableAlias=plagefrais0_,origin=null,columns={,className=tp.minibankWS.entity.PlageFraisDossier}}
+    \-[WHERE] SqlNode: 'where'
+       \-[AND] SqlNode: 'and'
+          +-[GE] BinaryLogicOperatorNode: '>='
+          |  +-[DOT] DotNode: 'plagefrais0_.montant_max' {propertyName=montant_max,dereferenceType=PRIMITIVE,getPropertyPath=montant_max,path=p.montant_max,tableAlias=plagefrais0_,className=tp.minibankWS.entity.PlageFraisDossier,classAlias=p}
+          |  |  +-[ALIAS_REF] IdentNode: 'plagefrais0_.num_plage' {alias=p, className=tp.minibankWS.entity.PlageFraisDossier, tableAlias=plagefrais0_}
+          |  |  \-[IDENT] IdentNode: 'montant_max' {originalText=montant_max}
+          |  \-[NUM_DOUBLE] LiteralNode: '200000.0'
+          \-[LE] BinaryLogicOperatorNode: '<='
+             +-[DOT] DotNode: 'plagefrais0_.montant_min' {propertyName=montant_min,dereferenceType=PRIMITIVE,getPropertyPath=montant_min,path=p.montant_min,tableAlias=plagefrais0_,className=tp.minibankWS.entity.PlageFraisDossier,classAlias=p}
+             |  +-[ALIAS_REF] IdentNode: 'plagefrais0_.num_plage' {alias=p, className=tp.minibankWS.entity.PlageFraisDossier, tableAlias=plagefrais0_}
+             |  \-[IDENT] IdentNode: 'montant_min' {originalText=montant_min}
+             \-[NUM_DOUBLE] LiteralNode: '200000.0'
+
+2015-02-01 13:04:00,620 DEBUG main org.hibernate.hql.internal.ast.ErrorCounter - throwQueryException() : no errors
+2015-02-01 13:04:00,620 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - HQL: select p from tp.minibankWS.entity.PlageFraisDossier as p where p.montant_max >= 200000.0 and p.montant_min <= 200000.0
+2015-02-01 13:04:00,620 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - SQL: select plagefrais0_.num_plage as num_plag1_0_, plagefrais0_.frais as frais2_0_, plagefrais0_.montant_max as montant_3_0_, plagefrais0_.montant_min as montant_4_0_ from T_FraisDossier plagefrais0_ where plagefrais0_.montant_max>=200000.0 and plagefrais0_.montant_min<=200000.0
+2015-02-01 13:04:00,620 DEBUG main org.hibernate.hql.internal.ast.ErrorCounter - throwQueryException() : no errors
+2015-02-01 13:04:00,621 DEBUG main org.hibernate.SQL - select plagefrais0_.num_plage as num_plag1_0_, plagefrais0_.frais as frais2_0_, plagefrais0_.montant_max as montant_3_0_, plagefrais0_.montant_min as montant_4_0_ from T_FraisDossier plagefrais0_ where plagefrais0_.montant_max>=200000.0 and plagefrais0_.montant_min<=200000.0
+2015-02-01 13:04:00,621 DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Obtaining JDBC connection
+2015-02-01 13:04:00,621 DEBUG main org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost/tauxfraisdb]
+2015-02-01 13:04:00,626 DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Obtained JDBC connection
+2015-02-01 13:04:00,631 DEBUG main org.hibernate.loader.Loader - Result set row: 0
+2015-02-01 13:04:00,631 DEBUG main org.hibernate.loader.Loader - Result row: EntityKey[tp.minibankWS.entity.PlageFraisDossier#3]
+2015-02-01 13:04:00,631 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Resolving associations for [tp.minibankWS.entity.PlageFraisDossier#3]
+2015-02-01 13:04:00,631 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Done materializing entity [tp.minibankWS.entity.PlageFraisDossier#3]
+2015-02-01 13:04:00,631 DEBUG main org.springframework.orm.jpa.EntityManagerFactoryUtils - Closing JPA EntityManager
+2015-02-01 13:04:00,631 DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Releasing JDBC connection
+2015-02-01 13:04:00,631 DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Released JDBC connection

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:jaxws="http://cxf.apache.org/jaxws"
+  xmlns:jaxrs="http://cxf.apache.org/jaxrs"  
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+	<!-- <import resource="classpath:META-INF/cxf/cxf-extension-jaxrs-binding.xml" /> for old cxf version only-->	
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+	
+	
+	
+   <jaxws:endpoint id="unsecure_calculEmpruntImpl_soap_endPoint"
+		implementor="#calculEmpruntImpl" address="/calculEmprunt">	
+		<!-- version sans securite -->	
+	</jaxws:endpoint>
+	
+	 <jaxws:endpoint id="unsecure_gestionTauxFraisImpl_soap_endPoint"
+		implementor="#gestionTauxFraisImpl" address="/gestionTauxFrais">	
+		<!-- version sans securite -->	
+	</jaxws:endpoint>
+	
+	<!-- ***** partie  WEB Services REST (JAX-RS) ********* -->
+
+
+
+<bean id="calculEmpruntRestAdaptateur" class="tp.miniBankWS.calcul.CalculEmpruntRestAdaptateur" >
+	<property name="calculEmprunt" ref="calculEmpruntImpl" />
+</bean>
+
+<bean id="gestionTauxFraisRestAdaptateur" class="tp.minibankWS.services.GestionTauxFraisRestAdaptateur" >
+	<property name="gestionTauxFrais" ref="gestionTauxFraisImpl" />
+</bean>
+
+<!-- url complete de type "http://localhost:8080/mywebapp/services/rest/myservice/xxx"
+avec "services" associe à l'url-pattern de CxfServlet dans web.xml
+et myservices/xxx associe aux valeurs de @Path() de la classe java et des méthodes
+-->
+<jaxrs:server id="myRestServices" address="/rest">
+	<jaxrs:serviceBeans>
+		<ref bean="calculEmpruntRestAdaptateur" />
+		<ref bean="gestionTauxFraisRestAdaptateur" />
+	</jaxrs:serviceBeans>
+	<jaxrs:extensionMappings>
+	<entry key="xml" value="application/xml" /> 
+	<entry key="json" value="application/json" />
+	</jaxrs:extensionMappings>
+	
+	<!-- a faire : trouver le paramétrage cxf 2.6 ou 2.7 compatible JSon
+	     et pour l'instant se limiter à la version 2.5.5 de cxf qui fonctionne avec JSON  -->
+		
+</jaxrs:server>
+
+</beans>

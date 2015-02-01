@@ -1,0 +1,18 @@
+package tp.async.service;
+
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+
+public class AdaptorCDATA extends XmlAdapter<String, String> {
+
+    @Override
+    public String marshal(String arg0) throws Exception {
+    	System.out.println("marshal");
+        return "<![CDATA[" + arg0 + "]]>"; //ajoute "<![CDATA[" et "]]>" lors de la serialisation (génération de xml)
+    }
+    @Override
+    public String unmarshal(String arg0) throws Exception {
+    	System.out.println("unmarshal");
+        return arg0;
+    	//return "<![CDATA[" + arg0 + "]]>";
+    }
+}

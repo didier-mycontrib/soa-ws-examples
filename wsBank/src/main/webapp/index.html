@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Index majeur</title>
+</head>
+<body>
+   <a href="services" > liste des services web (soap et rest)pris en charge par cxf</a> <br/>
+   
+    pour tester les services "soap" , utiliser soap-ui <br/>
+   <br/>
+   <hr/>
+   quelques url (relatives par rapport à http://localhost:8080/wsBank ) <br/>
+   pour tester les services "rest" :<br/>
+   
+   <a href="services/rest/calculEmprunt/mensualite?montant=50000&nb_mois=240&taux_mens_pct=0.25" >mensualite pour montant=50000 , 20ans=240mois , 3%an=0.25%mois  </a> <br/>
+   <a href="services/rest/gestionTauxFrais/tauxInteretCourant?nb_mois=240" >tauxInteretCourant pour 20ans=240mois</a> <br/>
+    <a href="services/rest/gestionTauxFrais/fraisDossier?montant=50000" >fraisDossier pour 50000 euros</a> <br/>
+   <hr/>
+   <br>
+   Ces services web élémentaires (en versions soap et rest) <br/>
+   peuvent servir à développer un service de plus haut niveau <br/>
+   (en java , bpel ou ...) getPropPret(montant,nb_mois) <br/>
+   retournant globalement (taux,mensualite,frais_dossier,...).
+   
+   
+</body>
+</html>

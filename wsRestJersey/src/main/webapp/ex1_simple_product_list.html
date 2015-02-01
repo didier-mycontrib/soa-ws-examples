@@ -1,0 +1,21 @@
+        <html ng-app="myAjsApp">
+        <head>
+        <script src="lib/angular/angular.js"></script>
+        <script src="js/mainCtrls_v1.js"></script>
+        </head>
+        <body ng-controller="ProductListCtrl">
+        <div id="divProd">
+        <h3> {{title}} </h3> 
+        <ul>
+        <li ng-repeat="prod in products">
+        {{prod.name}}
+        <p>{{prod.label}} , date:{{prod.date}} , price:{{prod.price}}</p>
+        </li>
+        </ul>
+        </div>
+        <div id="divStatus">
+        <hr/>
+        total number of products : <b>{{products.length}}</b> 
+        </div>
+        </body>
+        </html>

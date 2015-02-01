@@ -1,0 +1,58 @@
+package tp.async.service;
+
+import java.io.StringReader;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.transform.stream.StreamSource;
+
+@XmlRootElement()//defaultName="asyncEnv"
+public class AsyncEnv {
+	private String title;
+	
+	//@XmlElement
+	private String body; //xmlSubObjString;
+	
+	
+	public static void main(String[] args) {
+		try {
+			JAXBContext context = JAXBContext.newInstance(AsyncEnv.class);
+			Unmarshaller um = context.createUnmarshaller();
+			String xmlString="<notification><subject>sujetXY</subject><message>messageAB</message></notification>";
+			String globalXmlString="<asyncEnv><title>aaa</title><body>" +"<![CDATA[" + xmlString +"]]>" +"</body></asyncEnv>";
+			//String globalXmlString="<asyncEnv><title>aaa</title><body>" + xmlString +"</body></asyncEnv>";
+			AsyncEnv javaObj =  (AsyncEnv) um.unmarshal(new StreamSource(new StringReader(globalXmlString)));
+			System.out.println("javaObj:"+javaObj);
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+	}
+	
+	@Override
+	public String toString() {
+		return "AsyncEnv [title=" + title + ", body=" + body + "]";
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
+	//@XmlJavaTypeAdapter(value = AdaptorCDATA.class)
+	public String getBody() {
+		return body;
+	}
+	public void setBody(String body) {
+		this.body = body;
+	}
+
+	
+
+	
+	
+}

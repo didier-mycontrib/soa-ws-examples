@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:jaxws="http://cxf.apache.org/jaxws"
+  xmlns:jaxrs="http://cxf.apache.org/jaxrs"  
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+	<!-- <import resource="classpath:META-INF/cxf/cxf-extension-jaxrs-binding.xml" /> for old cxf version only-->	
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+	
+	<bean id="jmsConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+         <property name="brokerURL" value="tcp://localhost:61616" />    
+  </bean>
+	
+	<bean id="myJmsCxfConfig" class="org.apache.cxf.transport.jms.JMSConfiguration">
+       <property name="connectionFactory" ref="jmsConnectionFactory" />
+       <property name="targetDestination" value="queue.calculateur" />
+    </bean>
+	
+	<!-- jaxws:client with serviceClass au sens serviceInterface -->
+	 <jaxws:client id="serviceCalculateur_jmsProxy"
+	    xmlns:tp="http://service.tp/"
+	    
+	    serviceName="tp:CalculateurImplService"
+        endpointName="tp:JmsCalculateurServiceEndpoint"
+		serviceClass="tp.service.Calculateur" address="jms://">	
+		 <jaxws:features>
+        	<bean class="org.apache.cxf.transport.jms.JMSConfigFeature">
+              <property name="jmsConfig" ref="myJmsCxfConfig" />
+            </bean>
+    	</jaxws:features>
+	</jaxws:client>
+	
+	
+	
+	<!-- test jsm (sans soap-over-jms) -->
+	
+ 
+ 
+ <bean id="mySimpleJmsQueueSender" class="generic.jms.util.JmsQueueSender" >
+        <property name="queueConnectionFactory" ref="jmsConnectionFactory" />
+ </bean>
+ 
+ <bean id="genericJavaJmsClient" class="generic.async.jms.util.GenericJavaJmsClient" >
+        <property name="queueConnectionFactory" ref="jmsConnectionFactory" />
+ </bean>
+
+	
+	
+	
+
+
+</beans>

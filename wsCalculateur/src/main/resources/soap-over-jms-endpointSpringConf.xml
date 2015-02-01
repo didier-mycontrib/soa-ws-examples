@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:jaxws="http://cxf.apache.org/jaxws"
+  xmlns:jaxrs="http://cxf.apache.org/jaxrs"  
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+	<!-- <import resource="classpath:META-INF/cxf/cxf-extension-jaxrs-binding.xml" /> for old cxf version only-->	
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+	
+<!-- NB: cette partie de la configuration Spring ne sera pas incluse dans le global "springContext.xml"
+     mais sera chargée en mémoire séparément (sur demande via la page active_jms_part.jsp)
+     raison: pour eviter erreurs dès le démarrage si l'agent ActiveMQ n'est pas démarré/accessible -->
+
+  <!-- 
+   <bean id="calculateurImpl" class="tp.service.CalculateurImpl" >
+	</bean> 
+	-->
+	
+	<bean id="myJmsCxfConfig" lazy-init="true" class="org.apache.cxf.transport.jms.JMSConfiguration">
+       <property name="connectionFactory" ref="jmsConnectionFactory" />
+       <property name="targetDestination" value="queue.calculateur" />
+    </bean>
+    
+  
+	<!-- nb: pas de wsdl généré en mode soap-over-jms
+	mais la partie abstraite du wsdl serait la même qu'avec soap-over-http 
+	et soap-over-jms c'est déjà du specifique java  -->
+	 <jaxws:endpoint id="serviceCalculateur_soap_over_jms_endPoint" 
+	    xmlns:tp="http://service.tp/"
+	    serviceName="tp:CalculateurImplService"
+        endpointName="tp:JmsCalculateurServiceEndpoint"
+		implementor="#calculateurImpl" address="jms://">	
+		 <jaxws:features>
+        	<bean lazy-init="true" class="org.apache.cxf.transport.jms.JMSConfigFeature">
+              <property name="jmsConfig" ref="myJmsCxfConfig" />
+            </bean>
+    	</jaxws:features>
+	</jaxws:endpoint>
+
+
+</beans>

@@ -1,0 +1,36 @@
+        <html ng-app="myAjsApp">
+        <head>
+        <script src="lib/angular/angular.js"></script>
+        <script src="lib/angular/angular-resource.js"></script>
+        <script src="js/mainCtrls_v5_rest_service.js"></script>
+        <script src="js/myServices_for_v5.js"></script>
+
+        </head>
+        <body ng-controller="ProductListCtrl">
+	<div id="divParam">
+         max price : <input ng-model="maximumPrice"  /> <br/>
+        <button ng-click="refreshWithPriceWithRest()">refresh by maxPrice (with rest)</button>
+        
+	</div>
+        <div id="divProd">
+        <h3> {{title}} </h3> 
+        <ul>
+        <li ng-repeat="prod in products">
+        [ {{prod.id}} ] {{prod.name}}
+        <p>{{prod.label}} , date:{{prod.date}} , price:{{prod.price}}</p>
+        </li>
+        </ul>
+        <hr/>
+        maximumPrice = {{maximumPrice}}
+        <hr/>
+         selected prodId: <input ng-model="prodId"  /> <br/>
+         <button ng-click="refreshSelectedProdWithRest()">refresh selected Prod (with rest)</button> <br/>
+        selected product: [ {{prodId}} ] {{selectedProd}}
+        <hr/>
+        new price : <input ng-model="newPrice"  /> <br/>
+         <button ng-click="updatePrice();refreshSelectedProdWithRest()">update price</button> <br/>
+        <hr/>
+        {{message}}
+        </div>
+        </body>
+        </html>
