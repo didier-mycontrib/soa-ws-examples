@@ -9,7 +9,7 @@ http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
 http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
-	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+	<!-- <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" /> for old cxf version only-->
 	<!-- <import resource="classpath:META-INF/cxf/cxf-extension-jaxrs-binding.xml" /> for old cxf version only-->	
 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
 	
