@@ -1,8 +1,8 @@
-package tp.minibankWS.dao;
+package tp.miniBankWS.dao;
 
 import java.util.List;
 
-import tp.minibankWS.entity.PlageFraisDossier;
+import tp.miniBankWS.entity.PlageFraisDossier;
 
 public interface FraisDossierDao {
 	

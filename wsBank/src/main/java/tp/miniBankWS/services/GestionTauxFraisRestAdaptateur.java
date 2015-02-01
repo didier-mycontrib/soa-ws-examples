@@ -1,4 +1,4 @@
-package tp.minibankWS.services;
+package tp.miniBankWS.services;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

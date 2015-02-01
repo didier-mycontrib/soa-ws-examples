@@ -33,7 +33,7 @@ http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 	<property name="calculEmprunt" ref="calculEmpruntImpl" />
 </bean>
 
-<bean id="gestionTauxFraisRestAdaptateur" class="tp.minibankWS.services.GestionTauxFraisRestAdaptateur" >
+<bean id="gestionTauxFraisRestAdaptateur" class="tp.miniBankWS.services.GestionTauxFraisRestAdaptateur" >
 	<property name="gestionTauxFrais" ref="gestionTauxFraisImpl" />
 </bean>
 

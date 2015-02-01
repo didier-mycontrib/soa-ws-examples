@@ -1,4 +1,4 @@
-package tp.minibankWS.services;
+package tp.miniBankWS.services;
 
 import javax.jws.WebParam;
 import javax.jws.WebService;

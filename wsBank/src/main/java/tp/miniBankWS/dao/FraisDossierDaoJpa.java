@@ -1,11 +1,11 @@
-package tp.minibankWS.dao;
+package tp.miniBankWS.dao;
 
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import tp.minibankWS.entity.PlageFraisDossier;
+import tp.miniBankWS.entity.PlageFraisDossier;
 
 public class FraisDossierDaoJpa implements FraisDossierDao {
 

@@ -1,4 +1,4 @@
-package tp.minibankWS.entity;
+package tp.miniBankWS.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

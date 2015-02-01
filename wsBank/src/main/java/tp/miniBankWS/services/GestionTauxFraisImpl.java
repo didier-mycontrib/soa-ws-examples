@@ -1,11 +1,11 @@
-package tp.minibankWS.services;
+package tp.miniBankWS.services;
 
 import javax.jws.WebService;
 
-import tp.minibankWS.dao.FraisDossierDao;
-import tp.minibankWS.dao.TauxInteretDao;
-import tp.minibankWS.entity.PlageFraisDossier;
-import tp.minibankWS.entity.PlageTauxInteret;
+import tp.miniBankWS.dao.FraisDossierDao;
+import tp.miniBankWS.dao.TauxInteretDao;
+import tp.miniBankWS.entity.PlageFraisDossier;
+import tp.miniBankWS.entity.PlageTauxInteret;
 
 @WebService(endpointInterface="tp.minibankWS.services.GestionTauxFrais")
 public class GestionTauxFraisImpl implements GestionTauxFrais {

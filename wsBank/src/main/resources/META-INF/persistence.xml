@@ -8,8 +8,8 @@ http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
 <!-- with JNDI lookup inside JBoss App Serv -->
 <!-- <jta-data-source>java:/DefaultDS</jta-data-source> -->
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>tp.minibankWS.entity.PlageFraisDossier</class>  
-		<class>tp.minibankWS.entity.PlageTauxInteret</class>
+		<class>tp.miniBankWS.entity.PlageFraisDossier</class>  
+		<class>tp.miniBankWS.entity.PlageTauxInteret</class>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 		<!-- <property name="hibernate.hbm2ddl.auto" value="create-drop" /> -->

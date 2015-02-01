@@ -37,10 +37,10 @@ class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcesso
 	   <!-- <property name="daoXy" ref="daoXyV1" /> -->
 	</bean> 
 	
-	<bean id="fraisDossierDaoJpa" class="tp.minibankWS.dao.FraisDossierDaoJpa" />
-	<bean id="tauxInteretDaoJpa" class="tp.minibankWS.dao.TauxInteretDaoJpa" />
+	<bean id="fraisDossierDaoJpa" class="tp.miniBankWS.dao.FraisDossierDaoJpa" />
+	<bean id="tauxInteretDaoJpa" class="tp.miniBankWS.dao.TauxInteretDaoJpa" />
 	
-	<bean id="gestionTauxFraisImpl" class="tp.minibankWS.services.GestionTauxFraisImpl" >
+	<bean id="gestionTauxFraisImpl" class="tp.miniBankWS.services.GestionTauxFraisImpl" >
 	   <property name="fraisDossierDao" ref="fraisDossierDaoJpa" /> 
 	   <property name="tauxInteretDao" ref="tauxInteretDaoJpa" /> 
 	</bean> 

@@ -8,10 +8,10 @@ import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import tp.minibankWS.dao.FraisDossierDao;
-import tp.minibankWS.dao.TauxInteretDao;
-import tp.minibankWS.entity.PlageFraisDossier;
-import tp.minibankWS.entity.PlageTauxInteret;
+import tp.miniBankWS.dao.FraisDossierDao;
+import tp.miniBankWS.dao.TauxInteretDao;
+import tp.miniBankWS.entity.PlageFraisDossier;
+import tp.miniBankWS.entity.PlageTauxInteret;
 
 public class TestDao extends TestCase {
 	// test unitaire avec JUnit
