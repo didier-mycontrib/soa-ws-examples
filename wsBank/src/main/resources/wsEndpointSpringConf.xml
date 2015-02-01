@@ -9,7 +9,7 @@ http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
 http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
-	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+	<!-- <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" /> for old cxf version only-->	
 	<!-- <import resource="classpath:META-INF/cxf/cxf-extension-jaxrs-binding.xml" /> for old cxf version only-->	
 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
 	
@@ -51,8 +51,7 @@ et myservices/xxx associe aux valeurs de @Path() de la classe java et des métho
 	<entry key="json" value="application/json" />
 	</jaxrs:extensionMappings>
 	
-	<!-- a faire : trouver le paramétrage cxf 2.6 ou 2.7 compatible JSon
-	     et pour l'instant se limiter à la version 2.5.5 de cxf qui fonctionne avec JSON  -->
+	
 		
 </jaxrs:server>
 
