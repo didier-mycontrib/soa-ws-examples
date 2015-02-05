@@ -14,6 +14,17 @@ http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
 	
 	
+	<bean id="abstractLoggingInterceptor" abstract="true">
+   		 <property name="prettyLogging" value="true"/>
+	</bean>
+	<!-- predefined cxf interceptor : -->
+	<bean id="loggingInInterceptor" class="org.apache.cxf.interceptor.LoggingInInterceptor" parent="abstractLoggingInterceptor"/>
+	<bean id="loggingOutInterceptor" class="org.apache.cxf.interceptor.LoggingOutInterceptor" parent="abstractLoggingInterceptor"/>
+	
+	<!-- my custom cxf interceptor : -->
+	<bean id="myLogInterceptor" class="generic.ws.util.interceptor.cxf.CxfLogInterceptor">	   
+	</bean>
+	
 	<!-- 
 	Ce fichier (extension pour les services WEB) sera utilise par la technologie 
 	CXF au sein du projet xxx-web .
@@ -60,6 +71,10 @@ http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
         
 		implementor="#calculateurImpl" address="/calculateur">	
 		<!-- version sans securite -->	
+		<jaxws:inInterceptors>
+		    <ref bean="myLogInterceptor"/> 
+		   <!--  <ref bean="loggingInInterceptor"/> -->
+		</jaxws:inInterceptors>	
 	</jaxws:endpoint>
 	
 	 <jaxws:endpoint id="unsecure_serviceCalculateur_soap12_endPoint"
