@@ -1,10 +1,19 @@
 package tp.service;
 
+import io.swagger.annotations.Api;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 
+/**
+ * 
+ * @author formation
+ * Services REST basic (calculateur)
+ *
+ */
+@Api(value = "/calculateur/")
 @Path("/calculateur/")
 //@Produces("application/xml") //par defaut pour toutes les methodes de la classe
 public class CalculateurRestAdaptateur  {

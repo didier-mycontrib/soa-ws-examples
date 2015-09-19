@@ -13,10 +13,10 @@
   <packaging>war</packaging>
   
   <properties>
-  		<org.springframework.version>4.1.1.RELEASE</org.springframework.version>
-   		 <org.springframework.security.version>3.2.5.RELEASE</org.springframework.security.version>
+          <org.springframework.version>4.1.7.RELEASE</org.springframework.version> <!-- 4.1.1a7.RELEASE , 4.2.1.RELEASE trop recent -->
+   		 <org.springframework.security.version>3.2.8.RELEASE</org.springframework.security.version> <!-- 3.2.5a8.RELEASE , 4.0.2.RELEASE trop recent -->
    		 <org.apache.myfaces.version>2.2.5</org.apache.myfaces.version> <!-- 2.1.5 , 2.2.5 -->
-   		 <org.apache.cxf.version>3.0.2</org.apache.cxf.version>
+   		 <org.apache.cxf.version>3.0.6</org.apache.cxf.version> <!-- 3.0.2 ou 3.0.6 , 3.1.2 required java7+ , trop recent -->
    		<org.hibernate.version>4.3.6.Final</org.hibernate.version> 
 	</properties>
 	
@@ -308,7 +308,7 @@
 		<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<!-- <version>3.2</version> -->
+				<version>3.3</version>
 				<configuration>
 					<source>1.7</source>
 					<target>1.7</target>

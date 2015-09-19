@@ -14,11 +14,14 @@
   
   
   <properties>
-   		<org.springframework.version>4.1.1.RELEASE</org.springframework.version>
-   		 <org.springframework.security.version>3.2.5.RELEASE</org.springframework.security.version>
+   		<org.springframework.version>4.1.7.RELEASE</org.springframework.version> <!-- 4.1.1a7.RELEASE , 4.2.1.RELEASE trop recent -->
+   		 <org.springframework.security.version>3.2.8.RELEASE</org.springframework.security.version> <!-- 3.2.5a8.RELEASE , 4.0.2.RELEASE trop recent -->
    		 <org.apache.myfaces.version>2.2.5</org.apache.myfaces.version> <!-- 2.1.5 , 2.2.5 -->
-   		 <org.apache.cxf.version>3.0.2</org.apache.cxf.version>
-   		 <org.apache.activemq.version>5.7.0</org.apache.activemq.version>  	        	    
+   		 <org.apache.cxf.version>3.0.6</org.apache.cxf.version> <!-- 3.0.2 ou 3.0.6 , 3.1.2 required java7+ , trop recent -->
+   		  <org.apache.activemq.core.version>5.7.0</org.apache.activemq.core.version> 
+          <org.apache.activemq.version>5.12.0</org.apache.activemq.version> 
+         <jackson.version>2.4.5</jackson.version> <!-- 1.9 for cxf 2.7 , 2.2.3 for cxf 3.0.2 , 2.4.5 ??? for cxf 3.1.2 -->
+         <io.swagger.version>1.5.3</io.swagger.version>
 	</properties>
 	
 	<dependencies>
@@ -217,13 +220,13 @@
 		<dependency>
 		    <groupId>com.fasterxml.jackson.jaxrs</groupId>
 		    <artifactId>jackson-jaxrs-json-provider</artifactId>
-		    <version>2.2.3</version>
+		    <version>${jackson.version}</version>
 		</dependency>
 
 		<dependency>
 		    <groupId>com.fasterxml.jackson.jaxrs</groupId>
 		    <artifactId>jackson-jaxrs-xml-provider</artifactId>
-		    <version>2.2.3</version>
+		    <version>${jackson.version}</version>
 		</dependency>
 
 
@@ -288,7 +291,7 @@
 		  <dependency>
   <groupId>org.apache.activemq</groupId>
   <artifactId>activemq-core</artifactId>
-  <version>${org.apache.activemq.version}</version>
+  <version>${org.apache.activemq.core.version}</version>
 </dependency>
 
 <dependency>
@@ -299,6 +302,18 @@
 
 <!-- JMS 1.1 API =  indirect transitive dependency of activemq-core -->
 	     		
+	     		
+	     	<dependency>
+				<groupId>io.swagger</groupId>
+				<artifactId>swagger-core</artifactId>
+				<scope>compile</scope>
+				 <version>1.5.3</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.ws.rs</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 	
 	</dependencies>
 	
@@ -307,14 +322,69 @@
 		<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<!-- <version>3.2</version> -->
+				<version>3.3</version>
 				<configuration>
 					<source>1.7</source>
 					<target>1.7</target>
 				</configuration>
 		</plugin>
+		
+		<plugin>
+    <groupId>com.github.kongchen</groupId>
+    <artifactId>swagger-maven-plugin</artifactId>
+    <version>${io.swagger.version}</version>
+    <configuration>
+        <apiSources>
+            <apiSource>
+                <springmvc>false</springmvc> <!-- springmvc = false  means JAX-RS -->
+                <locations>tp.service.RestDeviseService;tp.service.CalculateurRestAdaptateur</locations> <!-- package(s)  containing Java REST classes or classe(s) separator=; -->
+                <schemes>http,https</schemes>
+                <host>localhost:8080</host>
+                <basePath>/wsCalculateur/services/rest</basePath>
+                <info>
+                    <title>REST Service of tp/demo wsCalculateur</title>
+                    <version>v1</version>                  
+                    <description>this is a example</description>
+                    <termsOfService>
+                        http://www.github.com/kongchen/swagger-maven-plugin
+                    </termsOfService>
+                    <contact>
+                        <email>toto@iciOuLa.com</email>
+                        <name>toto</name>
+                        <url>http://www.mycontrib.org</url>
+                    </contact>
+                    <license>
+                        <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+                        <name>Apache 2.0</name>
+                    </license>
+                </info>
+                <!-- 
+                <securityDefinitions>
+                    <securityDefinition>
+                        <name>basicAuth</name>
+                        <type>basic</type>
+                    </securityDefinition>
+                    <securityDefinition>
+                        <json>/securityDefinition.json</json>
+                    </securityDefinition>
+                </securityDefinitions>
+                -->
+                <!-- Support classpath or file absolute path here.
+                1) classpath e.g: "classpath:/markdown.hbs", "classpath:/templates/hello.html"
+                2) file e.g: "${basedir}/src/main/resources/markdown.hbs",
+                    "${basedir}/src/main/resources/template/hello.html" -->
+                <templatePath>${basedir}/src/test/resources/swagger-template/strapdown.html.hbs</templatePath>
+                <outputPath>${basedir}/swagger-generated/document.html</outputPath>
+                <swaggerDirectory>${basedir}/swagger-generated/swagger-ui</swaggerDirectory>
+            </apiSource>
+        </apiSources>
+    </configuration>    
+</plugin>
+		
+		
 		</plugins>
 	   <finalName>wsCalculateur</finalName>
+	  
 	</build>
   
   

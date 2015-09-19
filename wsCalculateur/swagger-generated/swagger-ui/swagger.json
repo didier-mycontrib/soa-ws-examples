@@ -1,0 +1,68 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "this is a example",
+    "version" : "v1",
+    "title" : "REST Service of tp/demo wsCalculateur",
+    "termsOfService" : "http://www.github.com/kongchen/swagger-maven-plugin",
+    "contact" : {
+      "name" : "toto",
+      "url" : "http://www.mycontrib.org",
+      "email" : "toto@iciOuLa.com"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/wsCalculateur/services/rest",
+  "tags" : [ {
+    "name" : "calculateur"
+  }, {
+    "name" : "devises"
+  } ],
+  "schemes" : [ "http", "https" ],
+  "paths" : {
+    "/devises/byName/{name}" : {
+      "get" : {
+        "tags" : [ "devises" ],
+        "summary" : "Find Devise by name",
+        "description" : "Returns a Devise",
+        "operationId" : "getDeviseByName",
+        "produces" : [ "application/xml" ],
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Devise"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Devise" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "change" : {
+          "type" : "number",
+          "format" : "double"
+        }
+      },
+      "xml" : {
+        "name" : "devise"
+      }
+    }
+  }
+}

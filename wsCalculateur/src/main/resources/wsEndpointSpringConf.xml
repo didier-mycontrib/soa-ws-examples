@@ -22,8 +22,10 @@ http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 	<bean id="loggingOutInterceptor" class="org.apache.cxf.interceptor.LoggingOutInterceptor" parent="abstractLoggingInterceptor"/>
 	
 	<!-- my custom cxf interceptor : -->
+	<!-- 
 	<bean id="myLogInterceptor" class="generic.ws.util.interceptor.cxf.CxfLogInterceptor">	   
 	</bean>
+	-->
 	
 	<!-- 
 	Ce fichier (extension pour les services WEB) sera utilise par la technologie 
@@ -72,8 +74,8 @@ http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 		implementor="#calculateurImpl" address="/calculateur">	
 		<!-- version sans securite -->	
 		<jaxws:inInterceptors>
-		    <ref bean="myLogInterceptor"/> 
-		   <!--  <ref bean="loggingInInterceptor"/> -->
+		   <!--  <ref bean="myLogInterceptor"/> --> <!-- bug: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Fin prématurée du fichier. -->
+		    <ref bean="loggingInInterceptor"/> 
 		</jaxws:inInterceptors>	
 	</jaxws:endpoint>
 	
@@ -136,9 +138,9 @@ http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
      il faut utiliser la technologie alternative "jackson" pour obtenir une compatibilité 
      avec angular-js -->
 
-<!-- 'org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider' for jackson 1.9 -->
+<!-- or 'org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider' for old jackson 1.9 -->
 <bean id='jacksonJsonProvider' class='com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider' />
-<bean id='jacksonXmlProvider' class='com.fasterxml.jackson.jaxrs.xml.JacksonJaxbXMLProvider' />
+<!-- <bean id='jacksonXmlProvider' class='com.fasterxml.jackson.jaxrs.xml.JacksonJaxbXMLProvider' /> -->
 
 <!-- url complete de type "http://localhost:8080/mywebapp/services/rest/myservice/xxx"
 avec "services" associe à l'url-pattern de CxfServlet dans web.xml
@@ -147,21 +149,19 @@ et myservices/xxx associe aux valeurs de @Path() de la classe java et des métho
 <jaxrs:server id="myRestServices" address="/rest">
 	<jaxrs:providers>
 		<ref bean='jacksonJsonProvider' />
-		<ref bean='jacksonXmlProvider' />
+		<!-- <ref bean='jacksonXmlProvider' /> -->
 	</jaxrs:providers>
 	<jaxrs:serviceBeans>
 		<ref bean="restDeviseService" />
 		<ref bean="restProductServiceForAngularJs" />
 		<ref bean="calculateurRestAdaptateur" />
 	</jaxrs:serviceBeans>
+	
 	<jaxrs:extensionMappings>
 	<entry key="xml" value="application/xml" /> 
 	<entry key="json" value="application/json" />
-	</jaxrs:extensionMappings>
+	</jaxrs:extensionMappings>	
 	
-	<!-- a faire : trouver le paramétrage cxf 2.6 ou 2.7 compatible JSon
-	     et pour l'instant se limiter à la version 2.5.5 de cxf qui fonctionne avec JSON  -->
-		
 </jaxrs:server>
 
 

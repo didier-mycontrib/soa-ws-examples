@@ -50,6 +50,12 @@
    </dependency>
    -->
 	
+  <dependency>
+  <groupId>io.swagger</groupId>
+  <artifactId>swagger-jersey2-jaxrs</artifactId>
+  <!-- and indirectly : swagger-core for  api annotations -->
+  <version>1.5.0</version>
+</dependency>	
   
   </dependencies>
   

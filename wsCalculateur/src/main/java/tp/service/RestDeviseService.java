@@ -1,11 +1,15 @@
 package tp.service;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
@@ -19,6 +23,16 @@ import javax.ws.rs.core.Response.Status;
 
 import tp.data.Devise;
 
+/**
+ * 
+ * @author formation
+ * Services REST pour gérer des devises (monnaie avec taux de change)
+ *
+ * NB: cette classe mélange un peu tout (xml , json , text/plain) pour techniquement montrer un peu de tout
+ * sur un vrai projet d'entreprise ---> plusieurs classes plus homogènes .
+ *
+ */
+@Api(value = "/devises/")
 @Path("/devises/")
 //@Produces("application/xml") //par defaut pour toutes les methodes de la classe
 public class RestDeviseService {
@@ -37,7 +51,9 @@ public class RestDeviseService {
 	// pour URL = http://localhost:8080/wsCalculateur/services/rest/devises/all
 	@Produces("application/xml")
 	public Collection<Devise> getAllDevises(){
-		return mapDevises.values();
+		Collection<Devise> listeDev = mapDevises.values();
+		System.out.println("RestDeviseService.getAllDevises() retun " + listeDev);
+		return listeDev;
 	}
 	
 	@GET
@@ -52,6 +68,9 @@ public class RestDeviseService {
 	@Path("/byName/{name}")
 	// pour URL = http://localhost:8080/wsCalculateur/services/rest/devises/byName/euro
 	@Produces("application/xml")
+	@ApiOperation(value = "Find Devise by name",
+	 notes = "Returns a Devise",
+	 response = Devise.class)
 	public Devise getDeviseByName(@PathParam("name")String name){
 		return mapDevises.get(name);
 	}
@@ -70,7 +89,20 @@ public class RestDeviseService {
 		Devise devise = mapDevises.get(name);
 		if(devise!=null){
 			devise.setChange(newChange);
-			return Response.status(Status.OK).build();
+			return Response.status(Status.OK).entity("mise a jour effectuee").build();
+		}
+		else return Response.status(Status.NOT_FOUND).build();
+	}
+	
+	@PUT
+	@Path("/updateFromJson")
+	@Consumes("application/json")
+	public Response updateDeviseChangeFromJson(Devise d){
+		Devise existingDevise = mapDevises.get(d.getName());
+		if(existingDevise!=null){
+			existingDevise.setChange(d.getChange());
+			String result="devise " + d.getName() + "update with new change: " + existingDevise.getChange();
+			return Response.status(Status.OK).entity(result).build();
 		}
 		else return Response.status(Status.NOT_FOUND).build();
 	}
@@ -80,7 +112,20 @@ public class RestDeviseService {
 	public Response addNewDevise(@FormParam("name")String name,@FormParam("change")double change){
 		if(mapDevises.get(name)==null){
 			mapDevises.put(name,new Devise(name,change));
-			return Response.status(Status.OK).build();
+			return Response.status(Status.OK).entity("ajout enregistre").build();
+		}
+		else return Response.status(Status.CONFLICT).build();
+	}
+	
+	@POST
+	@Path("/createFromJson")
+	@Consumes("application/json")
+	public Response addNewDeviseFromJson(Devise devise){
+		
+		if(mapDevises.get(devise.getName())==null){
+			mapDevises.put(devise.getName(),devise);
+			String result="devise " + devise.getName() + "saved";
+			return Response.status(Status.OK).entity(result).build();
 		}
 		else return Response.status(Status.CONFLICT).build();
 	}
@@ -90,7 +135,7 @@ public class RestDeviseService {
 	public Response deleteDevise(@PathParam("name")String name){
 		if(mapDevises.get(name)!=null){
 		    mapDevises.remove(name);
-		    return Response.status(Status.OK).build();
+		    return Response.status(Status.OK).entity("suppresion effectuee").build();
 		}
 		else return Response.status(Status.NOT_FOUND).build();
 	}

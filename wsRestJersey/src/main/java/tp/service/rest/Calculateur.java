@@ -1,6 +1,9 @@
 package tp.service.rest;
 
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -8,10 +11,20 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 
 
+/**
+ * 
+ * @author formation
+ * Services REST basic (calculateur)
+ *
+ */
+@Api(value = "/calculateur")
 @Path("/calculateur/")
 //@Produces("application/xml") //par defaut pour toutes les methodes de la classe
 public class Calculateur {
 
+	@ApiOperation(value = "addition(a,b) with end of url like addition?a=5&b=6",
+			 notes = "Returns result of addition",
+			 response = Double.class)
 	@GET
 	@Path("/addition")
 	// pour URL = http://localhost:8080/wsRestJersey/services/rest/

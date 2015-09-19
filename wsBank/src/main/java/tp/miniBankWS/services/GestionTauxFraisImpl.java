@@ -7,7 +7,7 @@ import tp.miniBankWS.dao.TauxInteretDao;
 import tp.miniBankWS.entity.PlageFraisDossier;
 import tp.miniBankWS.entity.PlageTauxInteret;
 
-@WebService(endpointInterface="tp.minibankWS.services.GestionTauxFrais")
+@WebService(endpointInterface="tp.miniBankWS.services.GestionTauxFrais")
 public class GestionTauxFraisImpl implements GestionTauxFrais {
 
 	FraisDossierDao fraisDossierDao = null;
