@@ -1,4 +1,4 @@
-package client;
+package client.rest.via_http_client;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URI;

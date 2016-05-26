@@ -1,4 +1,4 @@
-package client.jersey.rest;
+package client.rest.jersey;
 
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;

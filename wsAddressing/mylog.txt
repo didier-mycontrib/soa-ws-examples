@@ -1,0 +1,67 @@
+2015-09-20 21:47:04,069 INFO main org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean - Creating Service {http://server.testwsa.tp/}HelloServiceImplService from class tp.testwsa.server.HelloService
+2015-09-20 21:47:10,361 INFO main org.apache.cxf.endpoint.ServerImpl - Setting the server's publish address to be http://localhost:9091/hello
+2015-09-20 21:47:10,636 INFO main org.eclipse.jetty.server.Server - jetty-8.1.15.v20140411
+2015-09-20 21:47:10,792 INFO main org.eclipse.jetty.server.AbstractConnector - Started SelectChannelConnector@localhost:9091
+2015-09-20 21:47:37,108 INFO main org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean - Creating Service {http://client.testwsa.tp/}CallbackImplService from class tp.testwsa.client.Callback
+2015-09-20 21:47:43,653 INFO main org.apache.cxf.endpoint.ServerImpl - Setting the server's publish address to be http://localhost:9092/callback
+2015-09-20 21:47:44,313 INFO main org.eclipse.jetty.server.Server - jetty-8.1.15.v20140411
+2015-09-20 21:47:44,642 INFO main org.eclipse.jetty.server.AbstractConnector - Started SelectChannelConnector@localhost:9092
+2015-09-20 21:47:44,879 INFO main org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean - Creating Service {hello.wsatest.service.tp}HelloService from class tp.testwsa.server.HelloService
+2015-09-20 21:47:53,024 INFO qtp31039851-13 org.apache.cxf.services.HelloServiceImplService.HelloServiceImplPort.HelloService - Inbound Message
+----------------------------
+ID: 1
+Address: http://localhost:9091/hello
+Encoding: UTF-8
+Http-Method: POST
+Content-Type: text/xml; charset=UTF-8
+Headers: {Accept=[*/*], Cache-Control=[no-cache], connection=[keep-alive], Content-Length=[668], content-type=[text/xml; charset=UTF-8], Host=[localhost:9091], Pragma=[no-cache], SOAPAction=[""], User-Agent=[Apache CXF 3.0.6]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Header><Action xmlns="http://www.w3.org/2005/08/addressing">hello.wsatest.service.tp/HelloService/sayHelloRequest</Action><MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:b474233e-0f5a-4222-a1a5-687096cab471</MessageID><To xmlns="http://www.w3.org/2005/08/addressing">http://localhost:9091/hello</To><ReplyTo xmlns="http://www.w3.org/2005/08/addressing"><Address>http://www.w3.org/2005/08/addressing/anonymous</Address></ReplyTo></soap:Header><soap:Body><ns2:sayHello xmlns:ns2="hello.wsatest.service.tp"><arg0>Developpeur Fou</arg0></ns2:sayHello></soap:Body></soap:Envelope>
+--------------------------------------
+2015-09-20 21:58:06,952 INFO main org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean - Creating Service {http://server.testwsa.tp/}HelloServiceImplService from class tp.testwsa.server.HelloService
+2015-09-20 21:58:13,203 INFO main org.apache.cxf.endpoint.ServerImpl - Setting the server's publish address to be http://localhost:9091/hello
+2015-09-20 21:58:14,058 INFO main org.eclipse.jetty.server.Server - jetty-8.1.15.v20140411
+2015-09-20 21:58:14,403 INFO main org.eclipse.jetty.server.AbstractConnector - Started SelectChannelConnector@localhost:9091
+2015-09-20 21:59:17,318 INFO main org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean - Creating Service {http://client.testwsa.tp/}CallbackImplService from class tp.testwsa.client.Callback
+2015-09-20 21:59:25,741 INFO main org.apache.cxf.endpoint.ServerImpl - Setting the server's publish address to be http://localhost:9092/callback
+2015-09-20 21:59:26,580 INFO main org.eclipse.jetty.server.Server - jetty-8.1.15.v20140411
+2015-09-20 21:59:26,941 INFO main org.eclipse.jetty.server.AbstractConnector - Started SelectChannelConnector@localhost:9092
+2015-09-20 21:59:27,280 INFO main org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean - Creating Service {hello.wsatest.service.tp}HelloService from class tp.testwsa.server.HelloService
+2015-09-20 21:59:35,407 INFO qtp7078768-13 org.apache.cxf.services.HelloServiceImplService.HelloServiceImplPort.HelloService - Inbound Message
+----------------------------
+ID: 1
+Address: http://localhost:9091/hello
+Encoding: UTF-8
+Http-Method: POST
+Content-Type: text/xml; charset=UTF-8
+Headers: {Accept=[*/*], Cache-Control=[no-cache], connection=[keep-alive], Content-Length=[668], content-type=[text/xml; charset=UTF-8], Host=[localhost:9091], Pragma=[no-cache], SOAPAction=[""], User-Agent=[Apache CXF 3.0.6]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Header><Action xmlns="http://www.w3.org/2005/08/addressing">hello.wsatest.service.tp/HelloService/sayHelloRequest</Action><MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:80cb4e5b-d4a7-4391-8872-17b3b1c276cd</MessageID><To xmlns="http://www.w3.org/2005/08/addressing">http://localhost:9091/hello</To><ReplyTo xmlns="http://www.w3.org/2005/08/addressing"><Address>http://www.w3.org/2005/08/addressing/anonymous</Address></ReplyTo></soap:Header><soap:Body><ns2:sayHello xmlns:ns2="hello.wsatest.service.tp"><arg0>Developpeur Fou</arg0></ns2:sayHello></soap:Body></soap:Envelope>
+--------------------------------------
+2015-09-20 22:18:29,180 INFO main org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean - Creating Service {http://server.testwsa.tp/}HelloServiceImplService from class tp.testwsa.server.HelloService
+2015-09-20 22:18:36,118 INFO main org.apache.cxf.endpoint.ServerImpl - Setting the server's publish address to be http://localhost:9091/hello
+2015-09-20 22:18:36,485 INFO main org.eclipse.jetty.server.Server - jetty-8.1.15.v20140411
+2015-09-20 22:18:36,839 INFO main org.eclipse.jetty.server.AbstractConnector - Started SelectChannelConnector@localhost:9091
+2015-09-20 22:18:50,741 INFO main org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean - Creating Service {http://client.testwsa.tp/}CallbackImplService from class tp.testwsa.client.Callback
+2015-09-20 22:18:57,532 INFO main org.apache.cxf.endpoint.ServerImpl - Setting the server's publish address to be http://localhost:9092/callback
+2015-09-20 22:18:58,265 INFO main org.eclipse.jetty.server.Server - jetty-8.1.15.v20140411
+2015-09-20 22:18:58,575 INFO main org.eclipse.jetty.server.AbstractConnector - Started SelectChannelConnector@localhost:9092
+2015-09-20 22:18:58,848 INFO main org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean - Creating Service {hello.wsatest.service.tp}HelloService from class tp.testwsa.server.HelloService
+2015-09-20 22:19:07,278 INFO qtp23729605-15 org.apache.cxf.services.HelloServiceImplService.HelloServiceImplPort.HelloService - Inbound Message
+----------------------------
+ID: 1
+Address: http://localhost:9091/hello
+Encoding: UTF-8
+Http-Method: POST
+Content-Type: text/xml; charset=UTF-8
+Headers: {Accept=[*/*], Cache-Control=[no-cache], connection=[keep-alive], Content-Length=[652], content-type=[text/xml; charset=UTF-8], Host=[localhost:9091], Pragma=[no-cache], SOAPAction=[""], User-Agent=[Apache CXF 3.0.6]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Header><Action xmlns="http://www.w3.org/2005/08/addressing">hello.wsatest.service.tp/HelloService/sayHelloRequest</Action><MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:92d40de0-2088-42a8-a0ed-6a97f71a5197</MessageID><To xmlns="http://www.w3.org/2005/08/addressing">http://localhost:9091/hello</To><ReplyTo xmlns="http://www.w3.org/2005/08/addressing"><Address>http://localhost:9092/callback</Address></ReplyTo></soap:Header><soap:Body><ns2:sayHello xmlns:ns2="hello.wsatest.service.tp"><user>Developpeur Fou</user></ns2:sayHello></soap:Body></soap:Envelope>
+--------------------------------------
+2015-09-20 22:19:41,892 INFO qtp13199174-17 org.apache.cxf.services.CallbackImplService.CallbackImplPort.Callback - Inbound Message
+----------------------------
+ID: 1
+Address: http://localhost:9092/callback
+Encoding: UTF-8
+Http-Method: POST
+Content-Type: text/xml; charset=UTF-8
+Headers: {Accept=[*/*], Cache-Control=[no-cache], connection=[keep-alive], Content-Length=[750], content-type=[text/xml; charset=UTF-8], Host=[localhost:9092], Pragma=[no-cache], User-Agent=[Apache CXF 3.0.6]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Header><Action xmlns="http://www.w3.org/2005/08/addressing">hello.wsatest.service.tp/HelloService/sayHelloResponse</Action><MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:c4cb6483-7138-4b37-a3c3-1d16e1c6d3c9</MessageID><To xmlns="http://www.w3.org/2005/08/addressing">http://localhost:9092/callback</To><RelatesTo xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:92d40de0-2088-42a8-a0ed-6a97f71a5197</RelatesTo></soap:Header><soap:Body><ns2:sayHelloResponse xmlns:ns2="hello.wsatest.service.tp"><response>Hello Developpeur Fou @ Sun Sep 20 22:19:10 CEST 2015 @ Sun Sep 20 22:19:40 CEST 2015</response></ns2:sayHelloResponse></soap:Body></soap:Envelope>
+--------------------------------------

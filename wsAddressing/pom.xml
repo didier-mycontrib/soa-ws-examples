@@ -219,6 +219,14 @@
 		</dependency>
 		
 		
+	<dependency> 
+ 		<groupId>org.apache.cxf</groupId> 
+ 		<artifactId>cxf-rt-transports-http-jetty</artifactId> 
+ 		<!-- <version>${org.apache.cxf.version}</version> --> 
+ 		<version>3.0.2</version>
+ 		</dependency> 
+		
+		
 		<!-- to generate good json for angular-js from JAX-RS et CXF (voir spring conf of jaxrs:server) -->		
 		<dependency>
 		    <groupId>com.fasterxml.jackson.jaxrs</groupId>
@@ -277,7 +285,7 @@
 		
 		
 		<!-- pour soap-over-jms in cxf  -->
-		
+		<!-- 
 			<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-transports-jms</artifactId>
@@ -302,7 +310,7 @@
    <artifactId>activemq-pool</artifactId>
    <version>${org.apache.activemq.version}</version>
 </dependency>
-
+-->
 <!-- JMS 1.1 API =  indirect transitive dependency of activemq-core -->
 	     		
 	     		
