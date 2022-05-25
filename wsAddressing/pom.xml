@@ -8,7 +8,7 @@
   
   <properties>
    		<org.springframework.version>4.1.7.RELEASE</org.springframework.version> <!-- 4.1.1a7.RELEASE , 4.2.1.RELEASE trop recent -->
-   		 <org.springframework.security.version>3.2.8.RELEASE</org.springframework.security.version> <!-- 3.2.5a8.RELEASE , 4.0.2.RELEASE trop recent -->
+   		 <org.springframework.security.version>5.5.7</org.springframework.security.version> <!-- 3.2.5a8.RELEASE , 4.0.2.RELEASE trop recent -->
    		 <org.apache.myfaces.version>2.2.5</org.apache.myfaces.version> <!-- 2.1.5 , 2.2.5 -->
    		 <org.apache.cxf.version>3.0.6</org.apache.cxf.version> <!-- 3.0.2 ou 3.0.6 , 3.1.2 required java7+ , trop recent -->
    		  <org.apache.activemq.core.version>5.7.0</org.apache.activemq.core.version> 
