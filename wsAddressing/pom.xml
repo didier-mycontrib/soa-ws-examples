@@ -10,7 +10,7 @@
    		<org.springframework.version>4.1.7.RELEASE</org.springframework.version> <!-- 4.1.1a7.RELEASE , 4.2.1.RELEASE trop recent -->
    		 <org.springframework.security.version>3.2.8.RELEASE</org.springframework.security.version> <!-- 3.2.5a8.RELEASE , 4.0.2.RELEASE trop recent -->
    		 <org.apache.myfaces.version>2.2.5</org.apache.myfaces.version> <!-- 2.1.5 , 2.2.5 -->
-   		 <org.apache.cxf.version>3.0.6</org.apache.cxf.version> <!-- 3.0.2 ou 3.0.6 , 3.1.2 required java7+ , trop recent -->
+   		 <org.apache.cxf.version>3.1.14</org.apache.cxf.version> <!-- 3.0.2 ou 3.0.6 , 3.1.2 required java7+ , trop recent -->
    		  <org.apache.activemq.core.version>5.7.0</org.apache.activemq.core.version> 
           <org.apache.activemq.version>5.12.0</org.apache.activemq.version> 
          <jackson.version>2.4.5</jackson.version> <!-- 1.9 for cxf 2.7 , 2.2.3 for cxf 3.0.2 , 2.4.5 ??? for cxf 3.1.2 -->
